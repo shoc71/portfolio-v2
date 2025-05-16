@@ -1,0 +1,17 @@
+@keyframes floatTilt {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(1deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.hover\:float-tilt:hover {
+    animation: floatTilt 0.8s ease-in-out infinite;
+}
