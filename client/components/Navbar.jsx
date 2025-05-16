@@ -22,7 +22,7 @@ const Navbar = () => {
         />
       </Link>
 
-      <ul className="hidden md:flex items-center gap-6 lg:gap-8">
+      <ul className="hidden md:flex items-end gap-6 lg:gap-8">
         <li>
           <Link
             href="/blog"
@@ -43,15 +43,6 @@ const Navbar = () => {
 
       <div className="flex items-center gap-4">
         <ThemeToggle />
-
-        {/* <a
-          href="#contact"
-          className="hidden lg:flex items-center gap-2 px-6 py-2 border border-[var(--border)] rounded-full"
-        >
-          Contact
-          <Image src={assets.profile_contact} alt="contact" className="w-4" />
-        </a> */}
-
         <Link
           href="/contact"
           className="hidden lg:flex items-center gap-2 px-6 py-2 border border-[var(--border)] rounded-full"
@@ -85,14 +76,14 @@ const Navbar = () => {
           >
             Projects
           </Link>
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             onClick={toggleMobileMenu}
             className="flex items-center gap-2 border border-[var(--border)] rounded-full px-5 py-2 text-sm"
           >
             Contact
             <Image src={assets.profile_contact} alt="contact" className="w-4" />
-          </a>
+          </Link>
         </div>
       )}
     </nav>
