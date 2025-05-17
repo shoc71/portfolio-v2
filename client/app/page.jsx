@@ -4,7 +4,8 @@ import ProfileSection from "@/app/home/ProfileSection";
 import YYZFlyover from "@/app/home/MapFlyOver";
 import WorkExperience from "@/app/home/WorkExperience";
 import { workExperience } from "@/data/workExperience";
-import TypeRacer2 from "./home/Typeracer/TypeRacerv2";
+import TypeRacer2 from "./home/TypeRacerv2";
+import CalendarPage from "./home/calendar";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-6">TypeRacer Challenge</h1>
         <TypeRacer2 />
       </div>
+      <CalendarPage />
     </main>
   );
 }
