@@ -41,7 +41,7 @@ const ProjectsPage = () => {
       <div className="max-w-xl mx-auto mb-6">
         <input
           type="text"
-          placeholder="Search by title, description, or tool..."
+          placeholder="Search by title, description, technologies, or tools..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full px-4 py-2 border rounded-md bg-[var(--input)] text-[var(--foreground)]"

@@ -3,11 +3,13 @@ import logo from './logo.jpg';
 import profile_contact from './contact.png';
 import error_icon from './404.png'
 import novel_seeker from './novel-seeker.png'
+import product_store from './product-store.png'
 
 export const assets = {
     profile_pic,
     logo,
     profile_contact,
     error_icon,
-    novel_seeker
+    novel_seeker,
+    product_store
 }

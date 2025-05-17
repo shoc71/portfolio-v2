@@ -26,13 +26,12 @@ import {
     SiAxios,
     SiBabel,
 } from "react-icons/si";
-import { FaAws, FaDatabase, FaCode, FaWindows } from "react-icons/fa";
-import { TbBrandCSharp } from "react-icons/tb";
+import { FaAws, FaDatabase, FaCode, FaWindows, FaCube, FaLock } from "react-icons/fa";
 import { DiMsqlServer } from "react-icons/di";
 import { BsCloud } from "react-icons/bs";
 
 export const techFilters = [
-    { id: "next", name: "Next.js", icon: <SiNextdotjs className="text-black" /> },
+    { id: "next", name: "Next.js", icon: <SiNextdotjs className="text-black dark:text-white" /> },
     {
         id: "tailwind",
         name: "Tailwind",
@@ -40,7 +39,7 @@ export const techFilters = [
     },
     {
         id: "csharp",
-        name: "C-Sharp",
+        name: "C#",
         icon: <SiC className="text-blue-800" />,
     },
     {
@@ -77,6 +76,11 @@ export const techFilters = [
         icon: <SiPostgresql className="text-blue-700" />,
     },
     {
+        id: "bcrypt",
+        name: "bcrypt",
+        icon: <FaLock className="text-gray-700 dark:text-white" />,
+    },
+    {
         id: "python",
         name: "Python",
         icon: <SiPython className="text-yellow-500" />,
@@ -101,14 +105,14 @@ export const techFilters = [
     {
         id: "express",
         name: "Express.js",
-        icon: <SiExpress className="text-gray-700" />,
+        icon: <SiExpress className="text-gray-700 dark:text-white" />,
     },
     {
         id: "jwt",
         name: "JWT",
         icon: <SiJsonwebtokens className="text-orange-500" />,
     },
-    { id: "github", name: "GitHub", icon: <SiGithub className="text-black" /> },
+    { id: "github", name: "GitHub", icon: <SiGithub className="text-black dark:text-white" /> },
     {
         id: "postman",
         name: "Postman",
@@ -131,6 +135,7 @@ export const techFilters = [
         name: "Visual Studio",
         icon: <FaWindows className="text-indigo-600" />,
     },
+    { id: "babel", name: "Babel", icon: <SiBabel className="text-red-600" /> },
     {
         id: "cloud",
         name: "API Gateway",
@@ -139,7 +144,7 @@ export const techFilters = [
     {
         id: "code",
         name: "General Code",
-        icon: <FaCode className="text-gray-700" />,
+        icon: <FaCode className="text-gray-700 dark:text-white" />,
     },
     { id: "redis", name: "Redis", icon: <SiRedis className="text-red-600" /> },
     {
@@ -156,6 +161,8 @@ export const techFilters = [
     {
         id: "bcryptjs",
         name: "bcryptjs",
-        icon: <FaCode className="text-gray-700" />,
+        icon: <FaCode className="text-gray-700 dark:text-white" />,
     },
+    { id: "chakraui", name: "Chakra UI", icon: <FaCube className="text-teal-500" /> },
+    { id: "shadcn", name: "ShadCN UI", icon: <FaCube className="text-purple-600" /> },
 ];
