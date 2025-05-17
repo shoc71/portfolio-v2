@@ -3,6 +3,7 @@ import { Outfit, Ovo } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ThemeInit from "@/components/Themeinit";
+import { Toaster } from "sonner";
 
 const outfitFont = Outfit({
   subsets: ["latin"],
@@ -27,7 +28,10 @@ export default function RootLayout({ children }) {
       >
         <ThemeInit />
         <Navbar />
-        <main style={{ paddingTop: "64px" }}>{children}</main>
+        <main style={{ paddingTop: "64px" }}>
+          {children}
+          <Toaster richColors />
+        </main>
         <Footer />
       </body>
     </html>

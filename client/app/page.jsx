@@ -25,12 +25,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TypeRacer Challenge Section */}
-      <div className="w-full max-w-5xl bg-muted rounded-xl p-6 shadow-inner text-center">
-        <h1 className="text-3xl font-bold mb-6">TypeRacer Challenge</h1>
-        <TypeRacer2 />
+      {/* TypeRacer + Calendar Side-by-Side */}
+      <div className="w-full max-w-7xl flex flex-col md:flex-row gap-6">
+        {/* TypeRacer Section */}
+        <div className="flex-[4] bg-muted rounded-xl p-6 shadow-inner">
+          <h1 className="text-3xl font-bold mb-6 text-center">
+            I Like To Make Interactive Components
+          </h1>
+          <TypeRacer2 />
+        </div>
+
+        {/* Calendar Section */}
+        <div className="flex-[1] bg-background border rounded-xl p-4 shadow-sm">
+          <h2 className="text-xl font-semibold mb-4 text-center">
+            Appointments
+          </h2>
+          <CalendarPage />
+        </div>
       </div>
-      <CalendarPage />
     </main>
   );
 }

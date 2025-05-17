@@ -48,7 +48,7 @@ export default function TypeRacer2() {
 
   return (
     <div className="w-full flex flex-col items-center gap-6">
-      <div className="bg-background text-foreground rounded-lg p-6 w-full max-w-2xl shadow-md">
+      <div className="bg-background text-foreground rounded-lg p-6 w-full max-w-4xl shadow-md">
         <div className="text-lg leading-8 font-mono break-words">
           {renderText()}
         </div>

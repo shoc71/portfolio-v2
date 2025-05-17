@@ -153,13 +153,11 @@ export default function ProfileCard() {
           {/* Info Section */}
           <div className="flex-1">
             <h2 className="text-xl font-semibold">{name}</h2>
-            <p className="text-muted-foreground text-sm">
-              A quick one-liner description about who you are or what you do.
-            </p>
+            <p className="text-muted-foreground text-sm">Software Engineer with UX/UI Interest</p>
             {completed && (
               <p className="text-xs mt-1 text-green-500">
                 ✨ Achievement unlocked:{" "}
-                <span className="underline">you@example.com</span>
+                <span className="underline">{email}</span>
               </p>
             )}
           </div>

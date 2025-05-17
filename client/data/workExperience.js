@@ -1,6 +1,6 @@
 export const workExperience = [
     {
-        jobTitle: "Frontend Developer",
+        jobTitle: "Jr. Frontend Developer",
         companyName: "AvantGarde Tek Inc.",
         startMonth: "Jun",
         startYear: "2024",
@@ -9,8 +9,12 @@ export const workExperience = [
         current: true,
         description:
             [
-                "Built interactive UI components using React and shadcn-ui. ",
-                "Improved website performance by 30% with code optimizations."
+                "Effectively collaborate with business analysts, quality assurance analysts, and DBA's throughout the software development life cycle",
+                "Analyze, debug and resolve defects",
+                "Review, test and document software functionality",
+                "Design, develop and deliver high - volume, low - latency applications for mission - critical systems",
+                "Write well designed, testable, efficient code",
+                "Ensure designs are in compliance with specifications"
             ],
     },
     {

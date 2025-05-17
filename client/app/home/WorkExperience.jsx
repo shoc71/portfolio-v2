@@ -16,7 +16,11 @@ export default function WorkExperience({ jobs }) {
             {job.startMonth} {job.startYear} -{" "}
             {job.current ? "Present" : `${job.endMonth} ${job.endYear}`}
           </p>
-          <p className="text-sm">{job.description}</p>
+          <ul className="list-disc list-inside text-sm space-y-1">
+            {job.description.map((point, j) => (
+              <li key={j}>{point}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
