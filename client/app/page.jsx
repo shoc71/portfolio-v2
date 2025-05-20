@@ -16,11 +16,11 @@ export default function Home() {
       </div>
 
       {/* Work + Map Section */}
-      <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6 items-start mb-8">
+      <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6 items-stretch mb-8">
         <div className="flex-1">
           <WorkExperience jobs={workExperience} />
         </div>
-        <div className="flex-1 flex flex-col items-center">
+        <div className="h-full flex-1 flex flex-col items-center">
           <YYZFlyover />
         </div>
       </div>

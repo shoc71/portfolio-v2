@@ -7,9 +7,9 @@ const mapsUrl = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 
 export default function YYZFlyover() {
   return (
-    <div className="bg-muted rounded-xl p-6 shadow-inner w-full max-w-md flex flex-col items-center space-y-4">
+    <div className="bg-muted rounded-xl p-6 shadow-inner w-full h-full max-w-md flex flex-col items-center space-y-4">
       <h2 className="text-xl font-semibold">Where am I?</h2>
-      <div className="w-full aspect-video rounded-lg overflow-hidden shadow">
+      <div className="w-full flex-1 min-h-[300px] aspect-video rounded-lg overflow-hidden shadow">
         <iframe
           title="Toronto Pearson International Airport Map"
           width="100%"
