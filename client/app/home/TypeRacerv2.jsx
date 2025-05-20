@@ -6,9 +6,6 @@ import {
   getCoreRowModel,
   flexRender,
 } from "@tanstack/react-table";
-
-import { ArrowUpDown } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -26,7 +23,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
+import useSound from "use-sound";
 import { Progress } from "@/components/ui/progress";
 import { prompts } from "@/data/TyperacerPrompts";
 
@@ -44,10 +41,14 @@ export default function TypeRacerBox() {
     points: true,
   });
   const [hasCompleted, setHasCompleted] = useState(false);
+  const [lastCompletionTime, setLastCompletionTime] = useState(null);
+
+  const [playSuccess] = useSound("/success.mp3", { volume: 0.5 });
 
   useEffect(() => {
     setStartTime(Date.now());
     setHasCompleted(false);
+    setLastCompletionTime(null);
   }, [currentPrompt]);
 
   const isComplete =
@@ -82,13 +83,10 @@ export default function TypeRacerBox() {
 
       setCompletedRuns((prev) => [...prev, newRun]);
       setHasCompleted(true);
+      setLastCompletionTime(timeTaken.toFixed(2));
+      playSuccess();
       setInput("");
-
-      const timeout = setTimeout(() => {
-        handleNewPrompt();
-      }, 1000);
-
-      return () => clearTimeout(timeout);
+      handleNewPrompt();
     }
   }, [
     isComplete,
@@ -98,25 +96,11 @@ export default function TypeRacerBox() {
     wordsTyped,
     input,
     hasCompleted,
+    playSuccess,
   ]);
-
-  const renderQuote = () => {
-    return currentPrompt.quote.split("").map((char, i) => {
-      let className = "";
-      if (i < input.length) {
-        className = input[i] === char ? "text-green-600" : "text-red-600";
-      }
-      return (
-        <span key={i} className={className}>
-          {char}
-        </span>
-      );
-    });
-  };
 
   const handleInputChange = (e) => {
     if (hasCompleted) return;
-
     const value = e.target.value;
     const expected = currentPrompt.quote;
 
@@ -134,6 +118,7 @@ export default function TypeRacerBox() {
     setInput("");
     setStartTime(Date.now());
     setHasCompleted(false);
+    setLastCompletionTime(null);
   };
 
   const handleNewPrompt = () => {
@@ -146,6 +131,7 @@ export default function TypeRacerBox() {
     setInput("");
     setStartTime(Date.now());
     setHasCompleted(false);
+    setLastCompletionTime(null);
   };
 
   const progressPercent = Math.min(
@@ -159,7 +145,10 @@ export default function TypeRacerBox() {
         accessorKey: "quote",
         header: "Quote",
         cell: (info) => (
-          <span className="font-mono text-sm break-words">
+          <span
+            className="font-mono text-sm max-w-[200px] block truncate"
+            title={info.getValue()}
+          >
             {info.getValue()}
           </span>
         ),
@@ -210,9 +199,22 @@ export default function TypeRacerBox() {
     }));
   };
 
+  const renderQuote = () => {
+    return currentPrompt.quote.split("").map((char, i) => {
+      let className = "";
+      if (i < input.length) {
+        className = input[i] === char ? "text-green-600" : "text-red-600";
+      }
+      return (
+        <span key={i} className={className}>
+          {char}
+        </span>
+      );
+    });
+  };
+
   return (
-    <div className="max-w-xl mx-auto p-6 bg-background rounded-lg shadow-md flex flex-col gap-6">
-      {/* Typing box */}
+    <div className="max-w-md sm:max-w-xl md:max-w-xl lg:max-w-2xl xl:max-w-4xl mx-auto p-6 bg-background rounded-lg shadow-md flex flex-col gap-4">
       <div>
         <div className="text-lg font-mono break-words">{renderQuote()}</div>
         <p className="text-right text-sm italic text-muted-foreground">
@@ -228,9 +230,9 @@ export default function TypeRacerBox() {
           autoComplete="on"
         />
         <Progress value={progressPercent} className="h-3 rounded mt-2" />
-        {hasCompleted && (
-          <p className="text-center text-green-500 font-semibold animate-pulse mt-2">
-            ✅ Completed!
+        {lastCompletionTime && (
+          <p className="text-green-600 mt-1 text-sm">
+            ✅ Completed in {lastCompletionTime} seconds!
           </p>
         )}
         <div className="flex gap-3 justify-end mt-2">
@@ -243,7 +245,6 @@ export default function TypeRacerBox() {
         </div>
       </div>
 
-      {/* Completed Runs Table */}
       <div>
         <div className="flex justify-between items-center mb-2">
           <h2 className="text-lg font-semibold text-foreground">
@@ -281,47 +282,49 @@ export default function TypeRacerBox() {
         </div>
 
         <div className="overflow-x-auto rounded border border-border bg-background">
-          <Table>
-            <TableHeader>
-              {table.getHeaderGroups().map((headerGroup) => (
-                <TableRow key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => (
-                    <TableHead key={header.id} className="text-foreground">
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                    </TableHead>
-                  ))}
-                </TableRow>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {table.getRowModel().rows.length === 0 ? (
-                <TableRow>
-                  <TableCell
-                    className="text-foreground text-center"
-                    colSpan={filteredColumns.length}
-                  >
-                    No completed runs yet.
-                  </TableCell>
-                </TableRow>
-              ) : (
-                table.getRowModel().rows.map((row) => (
-                  <TableRow key={row.id} className="text-foreground">
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
+          <div className="overflow-y-auto max-h-[280px]">
+            <Table>
+              <TableHeader>
+                {table.getHeaderGroups().map((headerGroup) => (
+                  <TableRow key={headerGroup.id}>
+                    {headerGroup.headers.map((header) => (
+                      <TableHead key={header.id} className="text-foreground">
                         {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
+                          header.column.columnDef.header,
+                          header.getContext()
                         )}
-                      </TableCell>
+                      </TableHead>
                     ))}
                   </TableRow>
-                ))
-              )}
-            </TableBody>
-          </Table>
+                ))}
+              </TableHeader>
+              <TableBody>
+                {table.getRowModel().rows.length === 0 ? (
+                  <TableRow>
+                    <TableCell
+                      className="text-foreground text-center"
+                      colSpan={filteredColumns.length}
+                    >
+                      No completed runs yet.
+                    </TableCell>
+                  </TableRow>
+                ) : (
+                  table.getRowModel().rows.map((row) => (
+                    <TableRow key={row.id} className="text-foreground">
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                )}
+              </TableBody>
+            </Table>
+          </div>
         </div>
       </div>
     </div>
