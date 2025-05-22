@@ -44,6 +44,7 @@ export default function TypeRacerBox() {
   const [lastCompletionTime, setLastCompletionTime] = useState(null);
 
   const [playSuccess] = useSound("/success.mp3", { volume: 0.5 });
+  const [playCelebration] = useSound("/victory.mp3", { volume: 1.0 });
 
   useEffect(() => {
     setStartTime(Date.now());
@@ -87,6 +88,12 @@ export default function TypeRacerBox() {
       playSuccess();
       setInput("");
       handleNewPrompt();
+
+      if (wpm > 100) {
+        setTimeout(() => {
+          playCelebration();
+        }, 1000);
+      }
     }
   }, [
     isComplete,
@@ -97,6 +104,7 @@ export default function TypeRacerBox() {
     input,
     hasCompleted,
     playSuccess,
+    playCelebration,
   ]);
 
   const handleInputChange = (e) => {
@@ -166,7 +174,10 @@ export default function TypeRacerBox() {
       {
         accessorKey: "date",
         header: "Date",
-        cell: (info) => info.getValue(),
+        cell: (info) => {
+          const fullDate = new Date(info.getValue());
+          return fullDate.toLocaleDateString();
+        },
       },
       {
         accessorKey: "timeSeconds",
@@ -214,7 +225,7 @@ export default function TypeRacerBox() {
   };
 
   return (
-    <div className="max-w-md sm:max-w-xl md:max-w-xl lg:max-w-2xl xl:max-w-4xl mx-auto p-6 bg-background rounded-lg shadow-md flex flex-col gap-4">
+    <div className="max-w-md sm:max-w-2xl md:max-w-xl lg:max-w-2xl xl:max-w-4xl mx-auto p-6 bg-background rounded-lg shadow-md flex flex-col gap-4">
       <div>
         <div className="text-lg font-mono break-words">{renderQuote()}</div>
         <p className="text-right text-sm italic text-muted-foreground">

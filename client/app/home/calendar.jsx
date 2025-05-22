@@ -87,22 +87,29 @@ export default function CalendarPage() {
   };
 
   const handleSendReminder = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     if (!emailInput) {
       toast.error("Please enter an email address.");
       return;
     }
 
+    if (!emailRegex.test(emailInput)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
     toast.success(
-      `Reminder sent to ${emailInput} for ${format(
+      `Reminder for ${emailInput} saved ${format(
         new Date(selectedAppointment.datetime),
-        "PPP 'at' p"
-      )}`
+        "PPP 'at' p."
+      )} The reminder email will be sent once server is up and running.`
     );
     setShowDialog(false);
   };
 
   return (
-    <div className="flex flex-col items-center gap-6 p-8 max-w-lg mx-auto">
+    <div className="flex flex-col items-center gap-4 p-8 max-w-lg mx-auto">
       <h1 className="text-2xl font-bold">Make an Appointment</h1>
 
       <Calendar

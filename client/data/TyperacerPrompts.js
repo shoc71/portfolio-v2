@@ -7,6 +7,10 @@
 
 export const prompts = [
     {
+        quote: "Hello World, Welcome to my personal website.",
+        author: "Sonu Singh",
+    },
+    {
         quote: "Typing speed matters less than accuracy.",
         author: "Unknown",
     },
@@ -431,7 +435,11 @@ export const prompts = [
         author: "Harvey Specter",
     },
     {
-        quote: "Boy, have you lost your mind, 'cause I'll help you find it!",
+        quote: "Boy, have you lost your mind, 'cause I'll help you find it! Whatcha looking for, ain't nobody gonna help you out there, Jesus could come through that door, he's not going to help you, if you don't stop sniffing after my child!",
+        author: "Stanley Hudson",
+    },
+    {
+        quote: "Did I STUTTER!?",
         author: "Stanley Hudson",
     },
     {
@@ -468,7 +476,7 @@ export const prompts = [
     },
     {
         quote: "Over the course of this documentary I've had 3 affairs. If you find my body in a ditch, let me save the police some trouble.",
-        author: "Michael Scott",
+        author: "Stanley Hudson",
     },
     {
         quote: "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",

@@ -1,8 +1,10 @@
 "use client";
-import React, { useState, useMemo } from "react";
+
+import React, { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { techFilters } from "@/data/techFilters";
 import { projects } from "@/data/projects";
+import FloatingSquaresBackground from "./FloatingSquaresBackground";
 
 const getRandomFive = (list) => {
   const shuffled = [...list].sort(() => 0.5 - Math.random());
@@ -13,7 +15,14 @@ const ProjectsPage = () => {
   const [selectedTool, setSelectedTool] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [showAllFilters, setShowAllFilters] = useState(false);
-  const [randomTech, setRandomTech] = useState(getRandomFive(techFilters));
+
+  // Initialize with a stable slice (first 7) to avoid hydration mismatch
+  const [randomTech, setRandomTech] = useState(techFilters.slice(0, 7));
+
+  // After mount, update randomTech to random items client-side only
+  useEffect(() => {
+    setRandomTech(getRandomFive(techFilters));
+  }, []);
 
   const visibleTechFilters = showAllFilters ? techFilters : randomTech;
 
@@ -34,11 +43,14 @@ const ProjectsPage = () => {
   }, [selectedTool, searchQuery]);
 
   return (
-    <section className="min-h-screen py-20 px-6 md:px-12 bg-[var(--background)] text-[var(--foreground)]">
-      <h2 className="text-4xl font-bold mb-8 text-center">My Projects</h2>
+    <section className="relative overflow-hidden min-h-screen py-20 px-6 md:px-12 bg-[var(--background)] text-[var(--foreground)]">
+      <FloatingSquaresBackground />
+      <h2 className="text-4xl font-bold mb-8 text-center relative z-10">
+        My Projects
+      </h2>
 
       {/* Search Bar */}
-      <div className="max-w-xl mx-auto mb-6">
+      <div className="max-w-xl mx-auto mb-6 relative z-10">
         <input
           type="text"
           placeholder="Search by title, description, technologies, or tools..."
@@ -49,7 +61,7 @@ const ProjectsPage = () => {
       </div>
 
       {/* Tool Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 mb-4">
+      <div className="flex flex-wrap justify-center gap-4 mb-4 relative z-10">
         {visibleTechFilters.map((tool) => (
           <button
             key={tool.id}
@@ -70,7 +82,7 @@ const ProjectsPage = () => {
       </div>
 
       {/* Show All / Show Less */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 relative z-10">
         <button
           onClick={() => {
             if (showAllFilters) {
@@ -85,7 +97,7 @@ const ProjectsPage = () => {
       </div>
 
       {/* Project Cards */}
-      <div className="grid gap-10 max-w-5xl mx-auto">
+      <div className="grid gap-10 max-w-5xl mx-auto relative z-10">
         {filteredProjects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
