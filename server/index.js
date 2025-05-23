@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
-import mailRoutes from './routes/mailExport';
+// import mailRoutes from './routes/mailExport';
 
 dotenv.config();
 const app = express();
@@ -17,7 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // API Routes
-app.use("/api", mailRoutes);
+// app.use("/api", mailRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {

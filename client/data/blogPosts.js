@@ -28,6 +28,17 @@ export const posts = [
             "random code that be put here to show examples of stuff here",
             "random images that are avaliable on the net as a link can be linked here and it works"
         ],
+        subtitle_3: "Hi there",
+        description_3: [
+            "This is where I type up a random paragraph.",
+            "This is a new sentence where I can type up even more things now."
+        ],
+        stuff_3: [
+            "links like a gif will be put here",
+            "gif 2 can be put here and the properties of both can be manipulated.",
+            "random code that be put here to show examples of stuff here",
+            "random images that are avaliable on the net as a link can be linked here and it works"
+        ],
         ending: "This is the end sentence."
     },
     {
