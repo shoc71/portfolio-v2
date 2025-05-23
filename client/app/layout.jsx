@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeInit />
         <Navbar />
-        <main style={{ paddingTop: "64px" }}>
+        <main style={{ paddingTop: "96px" }}>
           {children}
           <Toaster richColors />
         </main>

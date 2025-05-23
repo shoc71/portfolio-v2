@@ -11,7 +11,7 @@ export default function Footer() {
   const [isDark, setIsDark] = useState(false);
   const currentYear = new Date().getFullYear();
   // const lastUpdated = new Date(document.lastModified).toLocaleDateString();
-  const lastUpdated = "20/May/2025";
+  const lastUpdated = "22/May/2025";
   const linkClass =
     "flex items-center gap-2 px-4 py-2 rounded transition transform hover:scale-105 hover:shadow-lg hover:shadow-current animate-pulse";
 

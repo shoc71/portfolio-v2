@@ -43,7 +43,7 @@ const ProjectsPage = () => {
   }, [selectedTool, searchQuery]);
 
   return (
-    <section className="relative overflow-hidden min-h-screen py-20 px-6 md:px-12 bg-[var(--background)] text-[var(--foreground)]">
+    <section className="relative overflow-hidden min-h-screen py-10 px-6 md:px-12 bg-[var(--background)] text-[var(--foreground)]">
       <FloatingSquaresBackground />
       <h2 className="text-4xl font-bold mb-8 text-center relative z-10">
         My Projects
