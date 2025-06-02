@@ -17,12 +17,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // API Routes
-// app.use("/api", mailRoutes);
+app.use("/api", mailRoutes);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-    const clientPath = path.join(__dirname, "../client/out"); // assuming you're using `next export`
-
+    const clientPath = path.join(__dirname, "../client/out");
     app.use(express.static(clientPath));
 
     app.get("*", (req, res) => {
