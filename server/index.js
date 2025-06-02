@@ -21,15 +21,15 @@ const __dirname = path.dirname(__filename);
 // app.use("/api", mailRoutes);
 
 // Serve frontend in production
-if (NODE_ENV === "production") {
-    const clientPath = path.join(__dirname, "../client/out"); // assuming you're using `next export`
+// if (NODE_ENV === "production") {
+//     const clientPath = path.join(__dirname, "../client/out"); // assuming you're using `next export`
 
-    app.use(express.static(clientPath));
+//     app.use(express.static(clientPath));
 
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(clientPath, "index.html"));
-    });
-}
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.join(clientPath, "index.html"));
+//     });
+// }
 
 app.listen(PORT, () => {
     console.log(`✅ Server running on http://localhost:${PORT}`);
