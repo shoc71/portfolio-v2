@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
-// import mailRoutes from './routes/mailExport';
+import mailRoutes from './routes/mailExport';
 
 dotenv.config();
 const app = express();
