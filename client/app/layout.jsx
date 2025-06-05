@@ -17,8 +17,9 @@ const ovoFont = Ovo({
 
 export const metadata = {
   title: "Portfolio - Unos",
-  description: "Hi",
+  description: "Hello World, my name is Sonu. I made my personal website on nextjs and shadcn-ui primarly. I like coding fun projects that I find interesting (despite the challenge and good luck finding all the achievements.)",
 };
+
 
 export default function RootLayout({ children }) {
   return (

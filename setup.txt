@@ -38,3 +38,6 @@ You may now add components.
 """
 
 $ npx shadcn@latest add input button scroll-area select sheet tabs textarea tooltip
+
+
+cross-env NODE_ENV=production
