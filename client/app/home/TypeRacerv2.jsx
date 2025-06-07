@@ -46,6 +46,12 @@ export default function TypeRacerBox() {
   const [playSuccess] = useSound("/success.mp3", { volume: 0.5 });
   const [playCelebration] = useSound("/victory.mp3", { volume: 1.0 });
 
+  // Lazy-load the Table component, disable SSR (optional)
+  // const Table = dynamic(() => import("../../components/ui/table"), {
+  //   ssr: false,
+  //   loading: () => <p>Loading table...</p>,
+  // });
+
   useEffect(() => {
     setStartTime(Date.now());
     setHasCompleted(false);
