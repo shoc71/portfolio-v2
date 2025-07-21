@@ -9,8 +9,8 @@ const nextConfig = {
     //     serverActions: true
     // },
     // output: 'standalone',
-    swcMinify: true,
-    output: 'standalone',
+    // swcMinify: true,
+    // output: 'standalone',
 };
 
 export default nextConfig;
