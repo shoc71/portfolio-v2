@@ -11,9 +11,9 @@ export default function Footer() {
   const [isDark, setIsDark] = useState(false);
   const currentYear = new Date().getFullYear();
   // const lastUpdated = new Date(document.lastModified).toLocaleDateString();
-  const lastUpdated = "22/May/2025";
+  const lastUpdated = "23/July/2025";
   const linkClass =
-    "flex items-center gap-2 px-4 py-2 rounded transition transform hover:scale-105 hover:shadow-lg hover:shadow-current animate-pulse";
+    "flex items-center gap-2 px-4 py-2 rounded transition transform hover:scale-105 hover:shadow-lg hover:shadow-current";
 
   useEffect(() => {
     // Check if currently dark
@@ -73,6 +73,7 @@ export default function Footer() {
       <div className="hidden md:flex flex-col items-end text-xs opacity-70">
         <span>&copy; {currentYear}. All Rights Reversed.</span>
         <span>Last updated: {lastUpdated}</span>
+        <span>v.2.1.3</span>
       </div>
     </footer>
   );

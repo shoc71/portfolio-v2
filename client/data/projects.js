@@ -4,10 +4,10 @@ export const projects = [
     {
         title: "Novel Seeker",
         description:
-            "An E-commerce bookstore built ground up with admin privledges that allows you legitimately purchase and ship books and recieve products.",
+            "Novel Seeker - E-commerce bookstore MVP built for the client with admin privileges, tracking purchases, and managing products.",
         image: assets.novel_seeker,
-        githubUrl: "https://github.com/yourname/awesome-portfolio",
-        liveUrl: "https://awesome-portfolio.vercel.app",
+        githubUrl: "https://github.com/shoc71/novel-seeker",
+        liveUrl: "https://portfolio-v2-y4kx.onrender.com/projects",
         tools: ["mongodb", "express", "react", "nodejs", "stripe",
             "redis", "cloudinary", "jwt", "bcrypt", "tailwind",
             "html5", "css3", "javascript"],
@@ -16,7 +16,7 @@ export const projects = [
         title: "Product Store",
         description: "A Product Store where you can create a product and put it online for sale.",
         image: assets.product_store,
-        githubUrl: "https://github.com/yourname/node-api",
+        githubUrl: "https://github.com/shoc71/product-store",
         liveUrl: "https://node-api.vercel.app",
         tools: ["mongodb", "express", "react", "nodejs", "chakraui",
             "html5", "css3", "javascript"],
