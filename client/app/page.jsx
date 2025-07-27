@@ -6,6 +6,7 @@ import WorkExperience from "@/app/home/WorkExperience";
 import { workExperience } from "@/data/workExperience";
 import TypeRacer2 from "./home/TypeRacerv2";
 import CalendarPage from "./home/calendar";
+import NavigateButtons from "./home/navigate";
 import ParticlesBackground from "./backgrounds/ParticlesBackground";
 
 export default function Home() {
@@ -17,14 +18,22 @@ export default function Home() {
         <ProfileSection />
       </div>
 
-      {/* Work + Map Section */}
-      <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6 items-stretch mb-8">
-        <div className="flex-1">
+      {/* Work + Navigation Section */}
+      <div className="w-full max-w-6xl flex flex-col md:flex-row items-stretch mb-8">
+        <div className="flex-1 mb-8">
           <WorkExperience jobs={workExperience} />
         </div>
+        <div className="flex-1 flex flex-col items-center">
+          <NavigateButtons />
+        </div>
+      </div>
+
+      {/* Map Section */}
+      <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6 items-stretch mb-8">
         <div className="h-full flex-1 flex flex-col items-center">
           <YYZFlyover />
         </div>
+        {/*  */}
       </div>
 
       {/* TypeRacer + Calendar Side-by-Side */}

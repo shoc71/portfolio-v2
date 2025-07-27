@@ -24,12 +24,13 @@ import {
     SiPostman,
     SiJira,
 } from "react-icons/si";
-import { FaAws, FaDatabase, FaCode, FaWindows, FaCube, FaLock } from "react-icons/fa";
+import { FaAws, FaDatabase, FaCode, FaWindows, FaCube, FaLock, FaAngular, FaPuzzlePiece } from "react-icons/fa";
 import { DiMsqlServer } from "react-icons/di";
-import { BsCloud } from "react-icons/bs";
+import { BsCloud, BsFiletypeJs } from "react-icons/bs";
 
 export const toolIcons = {
     next: <SiNextdotjs className="w-5 h-5 text-black dark:text-white" />,
+    extension: <FaPuzzlePiece className="w-5 h-5 text-black dark:text-white" />,
     tailwind: <SiTailwindcss className="w-5 h-5 text-sky-400" />,
     react: <SiReact className="w-5 h-5 text-blue-500" />,
     appwrite: <SiAppwrite className="w-5 h-5 text-pink-500" />,
@@ -40,13 +41,15 @@ export const toolIcons = {
     html5: <SiHtml5 className="w-5 h-5 text-orange-500" />,
     css3: <SiCss3 className="w-5 h-5 text-blue-600" />,
     redis: <SiRedis className="w-5 h-5 text-red-600" />,
+    angular: <FaAngular className="w-5 h-5 text-red-500"/>,
     javascript: <SiJavascript className="w-5 h-5 text-yellow-400" />,
     sql: <FaDatabase className="w-5 h-5 text-[#CC2927]" />,
-    python: <SiPython className="w-5 h-5 text-yellow-500" />,
+    python: <SiPython className="w-5 h-5 text-blue-500" />,
     csharp: <FaCode className="w-5 h-5 text-purple-600 dark:text-white" />,
     cplusplus: <SiC className="w-5 h-5 text-blue-800" />,
     mvc: <SiDotnet className="w-5 h-5 text-purple-800" />,
-    nodejs: <SiNodedotjs className="w-5 h-5 text-green-500" />,
+    nodejs: <BsFiletypeJs className="w-5 h-5 text-yellow-500" />,
+    json: <SiNodedotjs className="w-5 h-5 text-green-500" />,
     postgresql: <SiPostgresql className="w-5 h-5 text-blue-700" />,
     sqlserver: <FaDatabase className="w-5 h-5 text-red-600" />,
     git: <SiGit className="w-5 h-5 text-orange-500" />,

@@ -10,7 +10,15 @@ export const projects = [
         liveUrl: "https://portfolio-v2-y4kx.onrender.com/projects",
         tools: ["mongodb", "express", "react", "nodejs", "stripe",
             "redis", "cloudinary", "jwt", "bcrypt", "tailwind",
-            "html5", "css3", "javascript"],
+            "html5", "css3", "javascript", "json"],
+    },
+    {
+        title: "Job Tracker Extension",
+        description: "Know where you applied and log all the information in one spot",
+        image: assets.product_store,
+        githubUrl: "https://github.com/shoc71/job-tracker-extension",
+        liveUrl: "https://node-api.vercel.app",
+        tools: ["html5", "css3", "javascript", "json", "nodejs", "bootstrap", "extension"],
     },
     {
         title: "Product Store",
