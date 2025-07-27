@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { email } from "../home/ProfileSection";
 import { useEffect, useState } from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
@@ -49,7 +50,7 @@ export default function AchievementsPage() {
               <div className="flex items-center gap-2 text-green-600">
                 <CheckCircle className="w-5 h-5" />
                 <span>
-                  Email unlocked: <strong>you@example.com</strong>
+                  Email unlocked: <strong>{email}</strong>
                 </span>
               </div>
             ) : (

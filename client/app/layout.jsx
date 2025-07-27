@@ -24,9 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${outfitFont.className} ${ovoFont.className} antialiased`}
-      >
+      <body className={`${outfitFont.className} ${ovoFont.className} antialiased`}>
         <ThemeInit />
         <Navbar />
         <main style={{ paddingTop: "96px" }}>

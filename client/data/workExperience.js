@@ -1,9 +1,9 @@
 export const workExperience = [
-    
+
     {
         jobTitle: "Software Developer",
         companyName: "Coretech Infrastructure Solutions Inc.",
-        startMonth: "Jun",
+        startMonth: "May",
         startYear: "2025",
         endMonth: "Present",
         endYear: "",
