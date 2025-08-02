@@ -52,6 +52,23 @@ export default function TypeRacerBox() {
   //   loading: () => <p>Loading table...</p>,
   // });
 
+  // Load saved runs from localStorage on mount
+  useEffect(() => {
+    const savedRuns = localStorage.getItem("completedRuns");
+    if (savedRuns) {
+      // console.log("Loaded from localStorage:", savedRuns);
+      setCompletedRuns(JSON.parse(savedRuns));
+    // } else {
+    //   console.log("No saved runs found.");
+    }
+  }, []);
+
+  // Save runs to localStorage whenever they change
+  useEffect(() => {
+    // console.log("Saving to localStorage:", completedRuns);
+    localStorage.setItem("completedRuns", JSON.stringify(completedRuns));
+  }, [completedRuns]);
+
   useEffect(() => {
     setStartTime(Date.now());
     setHasCompleted(false);
@@ -299,7 +316,7 @@ export default function TypeRacerBox() {
         </div>
 
         <div className="overflow-x-auto rounded border border-border bg-background">
-          <div className="overflow-y-auto max-h-[280px]">
+          <div className="overflow-y-auto max-h-[340px]">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (

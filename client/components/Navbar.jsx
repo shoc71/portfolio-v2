@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { assets } from "@/assets/assets";
@@ -9,11 +9,37 @@ import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 0) {
+        setIsVisible(true); // Always show at top
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false); // Scrolling down
+      } else {
+        setIsVisible(true); // Scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-[8%] py-4 flex items-center justify-between bg-[var(--background)] text-[var(--foreground)] shadow transition-colors duration-500">
+    <nav 
+      className={`w-full fixed top-0 left-0 z-50 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-[8%]
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}
+        ${lastScrollY > 10 ? "bg-[var(--background)]/0 backdrop-blur-md shadow-lg" : "bg-[var(--background)] shadow"}
+        py-4 flex items-center justify-between transition-all duration-500 text-[var(--foreground)]`}
+      >
       <Link href="/" className="flex items-center">
         <Image
           src={assets.logo}

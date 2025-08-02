@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { posts } from "@/data/blogPosts";
+import ParticlesCharBackground from "../backgrounds/ParticleBackgroundEmojis";
 
 export default function BlogPage() {
   return (
     <div className="p-6 max-w-3xl mx-auto">
+      <ParticlesCharBackground characters={["📑", "📄", "📁", "👨‍💻", "💻", "🖥️", "👩‍💻"]}/>
       <h1 className="text-3xl font-bold mb-6">Blog Posts</h1>
 
       <div className="space-y-4">

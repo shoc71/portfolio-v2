@@ -4,8 +4,9 @@ import React, { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { techFilters } from "@/data/techFilters";
 import { projects } from "@/data/projects";
-import FloatingSquaresBackground from "./FloatingSquaresBackground";
+// import FloatingSquaresBackground from "./FloatingSquaresBackground";
 import ParticlesBackground from "../backgrounds/ParticlesBackground";
+import ParticlesCustomBackground from "../backgrounds/ParticlesCustomBackground";
 
 const getRandomFive = (list) => {
   const shuffled = [...list].sort(() => 0.5 - Math.random());
@@ -44,12 +45,15 @@ const ProjectsPage = () => {
   }, [selectedTool, searchQuery]);
 
   return (
-    <section className="relative overflow-hidden min-h-screen py-10 px-6 md:px-12 bg-[var(--background)] text-[var(--foreground)]">
-      <FloatingSquaresBackground />
+    <section className="relative overflow-hidden min-h-screen py-10 px-6 md:px-12 text-[var(--foreground)]">
+      <ParticlesCustomBackground 
+        color="4f46e5"
+        shape="char"
+        characters={["📋", "📈", "🗃️", "🫂"]}
+      />
       <h2 className="text-4xl font-bold mb-8 text-center relative z-10">
         My Projects
       </h2>
-      <ParticlesBackground />
       {/* Search Bar */}
       <div className="max-w-xl mx-auto mb-6 relative z-10">
         <input

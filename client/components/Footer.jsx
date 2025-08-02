@@ -1,36 +1,27 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Mail, Sun, Moon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { useEffect } from "react";
 
 import "@/styles/footer.css";
 import { email, github, linkedin } from "@/app/home/ProfileSection";
 
 export default function Footer() {
-  const [isDark, setIsDark] = useState(false);
   const currentYear = new Date().getFullYear();
   // const lastUpdated = new Date(document.lastModified).toLocaleDateString();
   const lastUpdated = "23/July/2025";
   const linkClass =
-    "flex items-center gap-2 px-4 py-2 rounded transition transform hover:scale-105 hover:shadow-lg hover:shadow-current";
-
-  useEffect(() => {
-    // Check if currently dark
-    if (typeof window !== "undefined") {
-      const hasDark = document.documentElement.classList.contains("dark");
-      setIsDark(hasDark);
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
-    setIsDark(!isDark);
-  };
+    "flex items-center gap-2 px-4 py-2 rounded transition transform hover:shadow-lg hover:shadow-current";
 
   return (
-    <footer className="flex flex-wrap justify-center md:justify-between items-center gap-4 p-4 border-t border-border text-sm bg-background text-foreground">
-      <div className="flex flex-wrap gap-4">
+    <footer className="flex flex-end justify-center md:justify-between items-center gap-4 p-4 border-t border-border text-sm bg-background text-foreground">
+      <div className="flex flex-wrap gap-4 items-end justify-content">
+        {/* place image logo here as well */}
+        <div className="items-start md:flex flex-col text-xs opacity-70">
+          <span>Made by</span>
+          <span>Sonu Singh</span>
+        </div>
         <a
           href={github}
           target="_blank"
@@ -61,13 +52,13 @@ export default function Footer() {
           Email
         </a>
 
-        <button
+        {/* <button
           onClick={toggleDarkMode}
           className={`${linkClass} flex items-center gap-2 px-4 py-2 rounded border transition transform hover:scale-105 hover:shadow-[0_0_20px_theme(colors.foreground)] hover:float-tilt`}
         >
           {isDark ? <Sun size={18} /> : <Moon size={18} />}
           {isDark ? "Light Mode" : "Dark Mode"}
-        </button>
+        </button> */}
       </div>
 
       <div className="hidden md:flex flex-col items-end text-xs opacity-70">
