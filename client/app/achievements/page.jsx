@@ -2,10 +2,11 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
-import { email } from "../home/ProfileSection";
+import { emailDisplay } from "../home/ProfileSection";
 import { useEffect, useState } from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import ParticlesCustomBackground from "../backgrounds/ParticlesCustomBackground";
 
 export default function AchievementsPage() {
   const [unlocked, setUnlocked] = useState(false);
@@ -17,7 +18,12 @@ export default function AchievementsPage() {
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
+    <div className="min-h-screen flex flex-col max-w-3xl mx-auto px-4 py-12">
+      <ParticlesCustomBackground 
+        color="ffff00"
+        shape="char"
+        characters={["★", "☆", "✦", "🌟", "💫", "✨", "⭐"]}
+      />
       <h1 className="text-3xl font-bold mb-6">🏆 Achievements</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Card
@@ -50,7 +56,7 @@ export default function AchievementsPage() {
               <div className="flex items-center gap-2 text-green-600">
                 <CheckCircle className="w-5 h-5" />
                 <span>
-                  Email unlocked: <strong>{email}</strong>
+                  Email unlocked: <strong>{emailDisplay}</strong>
                 </span>
               </div>
             ) : (

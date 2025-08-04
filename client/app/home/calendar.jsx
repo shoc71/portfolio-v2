@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { Trash2, Mail } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const generateTimeSlots = () => {
   const slots = [];
@@ -109,14 +110,14 @@ export default function CalendarPage() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 p-8 max-w-lg mx-auto">
-      <h1 className="text-2xl font-bold">Make an Appointment</h1>
-
+    <div className="flex flex-col items-center gap-4 p-8 max-w-lg mx-auto bg-background rounded-xl border">
+      <h1 className="text-3xl font-semibold text-center">Appointments</h1>
+      <h3 className="text-xl font-bold">Make an Appointment</h3>
       <Calendar
         mode="single"
         selected={date}
         onSelect={(selectedDate) => selectedDate && setDate(selectedDate)}
-        className="rounded-md border"
+        className="rounded-lg border bg-background shadow-sm"
       />
 
       <div className="w-full flex items-center gap-4">
@@ -141,7 +142,9 @@ export default function CalendarPage() {
         Add Appointment
       </Button>
 
-      <h2 className="text-xl font-semibold mt-6 w-full">
+      <Separator className="my-1" />
+
+      <h2 className="text-xl font-semibold w-full">
         Upcoming Appointments
       </h2>
       <div className="w-full max-h-60 overflow-y-auto border rounded p-4 bg-background">

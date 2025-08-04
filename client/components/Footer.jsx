@@ -5,12 +5,12 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { useEffect } from "react";
 
 import "@/styles/footer.css";
-import { email, github, linkedin } from "@/app/home/ProfileSection";
+import { email, github, linkedin, name } from "@/app/home/ProfileSection";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   // const lastUpdated = new Date(document.lastModified).toLocaleDateString();
-  const lastUpdated = "23/July/2025";
+  const lastUpdated = "4/August/2025";
   const linkClass =
     "flex items-center gap-2 px-4 py-2 rounded transition transform hover:shadow-lg hover:shadow-current";
 
@@ -20,7 +20,7 @@ export default function Footer() {
         {/* place image logo here as well */}
         <div className="items-start md:flex flex-col text-xs opacity-70">
           <span>Made by</span>
-          <span>Sonu Singh</span>
+          <span>{name}</span>
         </div>
         <a
           href={github}
@@ -51,20 +51,12 @@ export default function Footer() {
           <Mail size={18} />
           Email
         </a>
-
-        {/* <button
-          onClick={toggleDarkMode}
-          className={`${linkClass} flex items-center gap-2 px-4 py-2 rounded border transition transform hover:scale-105 hover:shadow-[0_0_20px_theme(colors.foreground)] hover:float-tilt`}
-        >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          {isDark ? "Light Mode" : "Dark Mode"}
-        </button> */}
       </div>
 
       <div className="hidden md:flex flex-col items-end text-xs opacity-70">
         <span>&copy; {currentYear}. All Rights Reversed.</span>
         <span>Last updated: {lastUpdated}</span>
-        <span>v.2.1.3</span>
+        <span>v.2.3.0</span>
       </div>
     </footer>
   );

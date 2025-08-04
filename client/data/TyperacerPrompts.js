@@ -367,7 +367,7 @@ export const prompts = [
         author: "Uncle Iroh",
     },
     {
-        quote: "You must never giev in to despair. Allow yourself to slip down that road, and you surrender to your lowest instincts.",
+        quote: "You must never give in to despair. Allow yourself to slip down that road, and you surrender to your lowest instincts.",
         author: "Uncle Iroh",
     },
     {
@@ -499,7 +499,7 @@ export const prompts = [
         author: "Prison Mike (Michael Scott)",
     },
     {
-        quote: "I… Declare… BANKRUPTCY!",
+        quote: "I... Declare... BANKRUPTCY!",
         author: "Michael Scott",
     },
     {
@@ -513,5 +513,77 @@ export const prompts = [
     {
         quote: "I'm an early bird and I'm a night owl so I'm wise and I have worms.",
         author: "Michael Scott",
+    },
+    {
+        quote: "It's going to happen because I'm going to make it happen.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "Work until you no longer have to introduce yourself.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "Before you stab me in the back, make sure you never need me again.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "Here's how I gonna beat you. I'm going to outwork you. That's it.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "When life hands me lemons, I make a chocolate cake, and leaves b!tches wondering how I did it.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "Never give up something you can't go a day without thinking about.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "When achieving your goals is more important than partying, Welcome to the 1%",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "You do what they say or they shoot you, right? Wrong! You take the gun. You pull out a bigger gun or you call their bluff or you do one of another 146 other things.",
+        author: "Harvey Specter",
+    },
+    {
+        quote: "Defeat is a simple phenomenon that must exist in the world of competition. What matters is what you take from the defeat.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "What does originality mean? Your own personal style? How much you're worth? No, Originality Equals Hunger. You weren't born with it and it wasn't taught to you. What are you hungry for? is what makes a person's originality.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "Do you know the biggest cause of talent withering up? Loss of Hope? Despair? Fear? No, it's none of these. It's Satisfication. You just happened to win and that desire was released.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "If you don't live your life to achieve your dreams, it's pointless. That's why defeat is the crossroads for your dream. What's needed is the strength to fully realize your powerlessness in that moment. The ability to feel despair.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "Those who continue to fight in spite of their despair are bestowed with the power to achieve their dreams.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "Abolish the idea of winning by chance and clamn victory as a logical consequence.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "While you were getting excited over your medicore successes, true strikers tread a path over winning or losing everything.",
+        author: "Jinpaichi Ego",
+    },
+    {
+        quote: "If one is born as a male, at least once in his life, he'll dream of becoming the strongest man alive.",
+        author: "Baki Hanma",
+    },
+    {
+        quote: "What's futile is not realizing the reality of your own futility. One hundred cowards are the same as one.",
+        author: "Yujiro Hanma",
+    },
+    {
+        quote: "Only by Death is a true warrior Defeated",
+        author: "Yujiro Hanma",
     },
 ];

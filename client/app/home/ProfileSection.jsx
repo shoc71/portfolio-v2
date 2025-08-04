@@ -8,10 +8,18 @@ import { useState, useEffect, useRef } from "react";
 import { assets } from "@/assets/assets";
 import { useRouter } from "next/navigation";
 
-export const email = "mailto:sonusevenone@gmail.com";
-export const github = "https://github.com/shoc71/";
-export const linkedin = "https://linkedin.com/in/sonu-ssingh";
-export const name = "Sonu Singh";
+export const emailDisplay = process.env.EMAIL_ID;
+export const firstName = process.env.FIRST_NAME_ID;
+export const email = `mailto:${emailDisplay}`;
+export const github = `https://github.com/${process.env.GITHUB_ID}`;
+export const linkedin = `https://linkedin.com/in/${process.env.LINKEDIN_ID}`;
+export const name = `${firstName} ${process.env.LAST_NAME_ID}`;
+export const metadata = {
+  title: `Portfolio - ${firstName}`,
+  description: `Hello World, my name is ${firstName}. \
+                I built this website using NextJS with ShadCN-UI. \
+                Explore this website to your fullest heart's content.`,
+};
 
 export default function ProfileCard() {
   const [hovering, setHovering] = useState(false);
@@ -157,7 +165,7 @@ export default function ProfileCard() {
             {completed && (
               <p className="text-xs mt-1 text-green-500">
                 ✨ Achievement unlocked:{" "}
-                <span className="underline">{email}</span>
+                <span className="underline">{emailDisplay}</span>
               </p>
             )}
           </div>
