@@ -5,14 +5,13 @@ import YYZFlyover from "@/app/home/MapFlyOver";
 import WorkExperience from "@/app/home/WorkExperience";
 import { workExperience } from "@/data/workExperience";
 import TypeRacer2 from "./home/TypeRacerv2";
-import CalendarPage from "./home/Calendar";
+import CalendarPage from "@/app/home/Calendar";
 
 import { ResizableDemo } from "./home/Resizeable";
 
 import ParticlesBackground from "./backgrounds/ParticlesBackground";
 import CarouselButtons from "./home/CarouselPages";
 import { SliderDemo } from "./home/Slider";
-// import ScrollableTags from "./home/ScrollableTags";
 
 export default function Home() {
   return (
