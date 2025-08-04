@@ -7,11 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Copy, Trash2, Pencil, ThumbsUp } from "lucide-react";
 import { toast } from "sonner";
 import { FaUserCircle } from "react-icons/fa";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
-import emailjs from "emailjs-com";
-import ParticlesColorBackground from "../backgrounds/ParticleBackgroundPurple";
 import ParticlesCustomBackground from "../backgrounds/ParticlesCustomBackground";
+import { emailDisplay } from "../home/ProfileSection";
 
 const TwitterMockupPage = () => {
   const [posts, setPosts] = useState([]);
@@ -24,8 +21,9 @@ const TwitterMockupPage = () => {
   const [editingPostId, setEditingPostId] = useState(null);
   const [editContent, setEditContent] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const email = "contact@example.com";
+  const email = emailDisplay;
 
   useEffect(() => {
     const savedPosts = JSON.parse(localStorage.getItem("posts")) || [];
@@ -142,25 +140,39 @@ const TwitterMockupPage = () => {
     toast.success("Email copied to clipboard!");
   };
 
-  // Real form submission using EmailJS
-  const sendEmail = async (e) => {
+  // Real form submission using formspree
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     try {
-      const res = await fetch("/api/send-email", {
+      const response = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      const data = await res.json();
 
-      if (data.success) {
+      if (response.ok) {
+        setResponseMessage("Your message has been sent!");
         toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error("Failed to send message.");
+        setResponseMessage("Failed to send the message.");
+        toast.error("Failed to send the message.");
       }
-    } catch {
-      toast.error("Failed to send message.");
+    } catch (error) {
+      setResponseMessage("An Error occurred:", error);
+      toast.error("An error occurred.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -327,14 +339,12 @@ const TwitterMockupPage = () => {
           {/* Contact form card */}
           <div className="p-6 bg-card rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">Send a Message</h2>
-            <form onSubmit={sendEmail} className="flex flex-col gap-3">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <Input
                 name="name"
                 placeholder="Name"
                 value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
+                onChange={handleChange}
                 required
                 className="bg-background border-border"
               />
@@ -343,9 +353,7 @@ const TwitterMockupPage = () => {
                 placeholder="Email"
                 type="email"
                 value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+                onChange={handleChange}
                 required
                 className="bg-background border-border"
               />
@@ -353,14 +361,14 @@ const TwitterMockupPage = () => {
                 name="message"
                 placeholder="Message"
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
+                onChange={handleChange}
                 rows={4}
                 required
                 className="resize-none bg-background border-border"
               />
-              <Button type="submit">Send</Button>
+              <Button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send"}
+              </Button>
             </form>
           </div>
         </aside>

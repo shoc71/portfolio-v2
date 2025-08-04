@@ -1,6 +1,6 @@
 export default function WorkExperience({ jobs }) {
   return (
-    <div className="bg-muted rounded-xl p-6 shadow-inner space-y-2">
+    <div className="bg-muted border rounded-xl p-6 shadow-inner space-y-2">
       <h2 className="text-xl font-semibold mb-4 border-b pb-2">
         Work Experience
       </h2>

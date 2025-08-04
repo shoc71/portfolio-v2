@@ -248,7 +248,8 @@ export default function TypeRacerBox() {
   };
 
   return (
-    <div className="max-w-md sm:max-w-2xl md:max-w-xl lg:max-w-2xl xl:max-w-4xl mx-auto p-6 bg-background rounded-lg shadow-md flex flex-col gap-4">
+    <div className="max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-2xl xl:max-w-4xl mx-auto p-6 bg-background border rounded-lg shadow-md flex flex-col gap-4">
+      <h1 className="text-3xl font-bold mb-6 text-center">I Like To Make Interactive Components</h1>
       <div>
         <div className="text-lg font-mono break-words">{renderQuote()}</div>
         <p className="text-right text-sm italic text-muted-foreground">
@@ -316,7 +317,7 @@ export default function TypeRacerBox() {
         </div>
 
         <div className="overflow-x-auto rounded border border-border bg-background">
-          <div className="overflow-y-auto max-h-[340px]">
+          <div className="overflow-y-auto max-h-[170px]">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (

@@ -5,50 +5,54 @@ import YYZFlyover from "@/app/home/MapFlyOver";
 import WorkExperience from "@/app/home/WorkExperience";
 import { workExperience } from "@/data/workExperience";
 import TypeRacer2 from "./home/TypeRacerv2";
-import CalendarPage from "./home/calendar";
-import NavigateButtons from "./home/navigate";
+import CalendarPage from "./home/Calendar";
+
+import { ResizableDemo } from "./home/Resizeable";
+
 import ParticlesBackground from "./backgrounds/ParticlesBackground";
+import CarouselButtons from "./home/CarouselPages";
+import { SliderDemo } from "./home/Slider";
+// import ScrollableTags from "./home/ScrollableTags";
 
 export default function Home() {
   return (
-    <main className="min-h-screen px-4 py-8 flex flex-col items-center">
+    <main className="flex flex-col max-w-10xl overflow-x-hidden items-center min-h-screen px-4 py-8">
       <ParticlesBackground />
-      {/* Profile Section */}
-      <div className="w-full max-w-5xl mb-8">
+      <div className="w-full max-w-7xl mb-8">
         <ProfileSection />
       </div>
 
       {/* Work + Navigation Section */}
-      <div className="w-full max-w-6xl flex flex-col md:flex-row items-stretch mb-8">
-        <div className="flex-1 mb-8">
+      <div className="max-w-7xl flex flex-col md:flex-row gap-4 mb-8">
+        <div className="flex-1 min-w-0">
           <WorkExperience jobs={workExperience} />
         </div>
-        <div className="flex-1 flex flex-col items-center">
-          <NavigateButtons />
+        <div className="flex flex-col items-center min-w-0 flex-[0.9]">
+          <CarouselButtons />
         </div>
       </div>
 
-      {/* Map Section */}
-      <div className="w-full max-w-5xl flex flex-col md:flex-row gap-6 items-stretch mb-8">
-        <div className="h-full flex-1 flex flex-col items-center">
+      {/* Map + Resizable Section */}
+      <div className="w-full flex flex-col max-w-7xl md:flex-row gap-6 items-center mb-8 flex-grow">
+        <div className="flex flex-col items-center justify-center min-h-[300px]">
           <YYZFlyover />
         </div>
-        {/*  */}
+        <div className="w-full flex md:flex-2 min-w-0">
+          <ResizableDemo />
+        </div>
       </div>
 
       {/* TypeRacer + Calendar Side-by-Side */}
-      <div className="w-full max-w-7xl flex flex-col md:flex-row gap-6">
-        {/* TypeRacer Section */}
-        <div className="flex-[2] bg-muted rounded-xl p-6 shadow-inner">
-          <h1 className="text-3xl font-bold mb-6 text-center">
-            I Like To Make Interactive Components
-          </h1>
+      <div className="w-full flex flex-col max-w-7xl lg:flex-row gap-6 justify-center">
+        <div className="flex-3 rounded-xl space-y-4">
           <TypeRacer2 />
+          {/* disappears when screen is smaller than md */}
+          <div className="hidden lg:block"> 
+            <SliderDemo max={100}/>
+          </div>
         </div>
 
-        {/* Calendar Section */}
-        <div className="flex-[1] bg-background border rounded-xl p-4 shadow-sm">
-          <h2 className="text-xl font-semibold text-center">Appointments</h2>
+        <div className="max-w-full min-w-[320px]">
           <CalendarPage />
         </div>
       </div>
