@@ -12,7 +12,6 @@ import { ResizableDemo } from "./home/Resizeable";
 import ParticlesBackground from "./backgrounds/ParticlesBackground";
 import CarouselButtons from "./home/CarouselPages";
 import { SliderDemo } from "./home/Slider";
-// import ScrollableTags from "./home/ScrollableTags";
 
 export default function Home() {
   return (
