@@ -8,12 +8,12 @@ import { useState, useEffect, useRef } from "react";
 import { assets } from "@/assets/assets";
 import { useRouter } from "next/navigation";
 
-export const emailDisplay = process.env.NEXT_PUBLIC_EMAIL_ID;
-export const firstName = process.env.NEXT_PUBLIC_FIRST_NAME_ID;
+export const emailDisplay = process.env.EMAIL_ID;
+export const firstName = process.env.FIRST_NAME_ID;
 export const email = `mailto:${emailDisplay}`;
-export const github = `https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ID}`;
-export const linkedin = `https://linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_ID}`;
-export const name = `${firstName} ${process.env.NEXT_PUBLIC_LAST_NAME_ID}`;
+export const github = `https://github.com/${process.env.GITHUB_ID}`;
+export const linkedin = `https://linkedin.com/in/${process.env.LINKEDIN_ID}`;
+export const name = `${firstName} ${process.env.LAST_NAME_ID}`;
 export const metadata = {
   title: `Portfolio - ${firstName}`,
   description: `Hello World, my name is ${firstName}. \

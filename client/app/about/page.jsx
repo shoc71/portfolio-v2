@@ -13,7 +13,7 @@ import CryptoJS from "crypto-js";
 export default function AboutPage() {
 
   const storyFilePath = '/story.json.enc'
-  const passKey = process.env.NEXT_PUBLIC_PASS_KEY
+  const passKey = process.env.PASS_KEY
   const [storyPrelog, setStoryPrelog] = useState([])
 
   useEffect(() => {

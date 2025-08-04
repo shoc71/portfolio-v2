@@ -154,7 +154,7 @@ const TwitterMockupPage = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, {
+      const response = await fetch(`https://formspree.io/f/${process.env.FORMSPREE_ID}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
