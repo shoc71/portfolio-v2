@@ -6,12 +6,13 @@ import WorkExperience from "@/app/home/WorkExperience";
 import { workExperience } from "@/data/workExperience";
 import TypeRacer2 from "./home/TypeRacerv2";
 
-import { ResizableDemo } from "./home/resizeable";
+// import { ResizableDemo } from "./home/resizeable";
 
 import ParticlesBackground from "./backgrounds/ParticlesBackground";
 import CarouselButtons from "./home/CarouselPages";
 import { SliderDemo } from "./home/Slider";
 import CalendarPage from "./home/calendar";
+import { ResizableDemo } from "./home/Resizeable";
 
 export default function Home() {
   return (
