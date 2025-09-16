@@ -1,13 +1,31 @@
 export const workExperience = [
 
+    // {
+    //     jobTitle: "Software Developer",
+    //     companyName: "Coretech Infrastructure Solutions Inc.",
+    //     startMonth: "May",
+    //     startYear: "2025",
+    //     endMonth: "August",
+    //     endYear: "2025",
+    //     current: false,
+    //     description:
+    //         [
+    //             "Design, Debug, Develop, and Maintain Testable Responsive Web Applications",
+    //             "Built full-stack web apps using Python (Flask), MERN, and PERN stacks; focused on functionality, with room to improve on security practices.",
+    //             "Used Git for version control with branching and pull requests; monitored cloud logs to debug deployment issues.",
+    //             "Wrote Python scripts for automation, log analysis, and basic server monitoring.",
+    //             "Followed Agile practices; collaborated on side projects with code reviews, documentation updates, and iterative development.",
+    //             "Containerized apps with Docker and deployed to AWS (EC2, S3); used Docker Compose for multi-service development environments.",
+    //         ],
+    // },
     {
         jobTitle: "Software Developer",
         companyName: "Coretech Infrastructure Solutions Inc.",
         startMonth: "May",
         startYear: "2025",
-        endMonth: "Present",
-        endYear: "",
-        current: true,
+        endMonth: "August",
+        endYear: "2025",
+        current: false,
         description:
             [
                 "Design, Debug, Develop, and Maintain Testable Responsive Web Applications",

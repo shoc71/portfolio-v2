@@ -159,30 +159,31 @@ export default function ProfileCard() {
           </div>
 
           {/* Info Section */}
-          <div className="flex-1">
-            <h2 className="text-xl font-semibold">{name}</h2>
-            <p className="text-muted-foreground text-sm">Software Engineer with UX/UI Interest</p>
+          <div className="flex-1 text-center sm:text-left">
+            <h2 className="text-lg sm:text-xl font-semibold">{name}</h2>
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              Software Engineer with UX/UI Interest
+            </p>
             {completed && (
-              <p className="text-xs mt-1 text-green-500">
-                ✨ Achievement unlocked:{" "}
-                <span className="underline">{emailDisplay}</span>
+              <p className="text-xs sm:text-sm mt-1 text-green-500">
+                ✨ Achievement unlocked: <span className="underline">{emailDisplay}</span>
               </p>
             )}
           </div>
 
           {/* Contact Buttons */}
-          <div className="flex gap-3">
-            <Button className="border" size="icon" variant="ghost" asChild>
+          <div className="flex flex-wrap gap-3">
+            <Button className="border w-10 h-10 sm:w-12 sm:h-12" size="icon" variant="ghost" asChild>
               <a href={email}>
                 <Mail className="w-5 h-5" />
               </a>
             </Button>
-            <Button className="border" size="icon" variant="ghost" asChild>
+            <Button className="border w-10 h-10 sm:w-12 sm:h-12"size="icon" variant="ghost" asChild>
               <a href={github} target="_blank">
                 <Github className="w-5 h-5" />
               </a>
             </Button>
-            <Button className="border" size="icon" variant="ghost" asChild>
+            <Button className="border w-10 h-10 sm:w-12 sm:h-12" size="icon" variant="ghost" asChild>
               <a href={linkedin} target="_blank">
                 <Linkedin className="w-5 h-5" />
               </a>

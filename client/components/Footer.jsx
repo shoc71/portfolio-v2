@@ -10,7 +10,7 @@ import { email, github, linkedin, name } from "@/app/home/ProfileSection";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   // const lastUpdated = new Date(document.lastModified).toLocaleDateString();
-  const lastUpdated = "4/August/2025";
+  const lastUpdated = "16/September/2025";
   const linkClass =
     "flex items-center gap-2 px-4 py-2 rounded transition transform hover:shadow-lg hover:shadow-current";
 
@@ -19,8 +19,10 @@ export default function Footer() {
       <div className="flex flex-wrap gap-4 items-end justify-content">
         {/* place image logo here as well */}
         <div className="items-start md:flex flex-col text-xs opacity-70">
-          <span>Made by</span>
-          <span>{name}</span>
+          <span>
+            Made by <span className="block sm:inline">{name}</span>
+          </span>
+          {/* <span>{name}</span> */}
         </div>
         <a
           href={github}

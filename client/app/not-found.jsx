@@ -13,19 +13,26 @@ export default function ErrorPage() {
   }, []);
 
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <AlertTriangle className="text-red-500 w-16 h-16 mb-4" />
-        <h1 className="text-4xl font-bold text-gray-800">
-          This is a custom error page
-        </h1>
-        {/* <Link
-          href="/"
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Click Here to go Home
-        </Link> */}
-      </div>
+    <div
+      className={`flex flex-col items-center justify-center min-h-screen
+                  bg-gray-100 text-gray-800
+                  dark:bg-stone-950 dark:text-gray-100`}
+    >
+      <AlertTriangle
+        className={`w-16 h-16 mb-4 ${isDark ? "text-red-400" : "text-red-500"}`}
+      />
+      <h1 className="text-4xl font-bold text-center">
+        This is a custom error page
+      </h1>
+
+      <Link
+        href="/"
+        className={`mt-4 px-4 py-2 rounded
+                    bg-blue-500 text-white hover:bg-blue-600
+                    dark:bg-blue-700 dark:hover:bg-blue-600`}
+      >
+        Click Here to go Home
+      </Link>
     </div>
   );
 }

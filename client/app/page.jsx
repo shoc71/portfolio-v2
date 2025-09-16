@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Map + Resizable Section */}
       <div className="w-full flex flex-col max-w-7xl md:flex-row gap-6 items-center mb-8 flex-grow">
-        <div className="flex flex-col items-center justify-center min-h-[300px]">
+        <div className="flex flex-col items-center justify-center min-h-[200px] sm:min-h-[300px] md:min-h-[400px] lg:min-h-[500px]">
           <YYZFlyover />
         </div>
         <div className="w-full flex md:flex-2 min-w-0">

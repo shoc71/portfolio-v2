@@ -18,6 +18,10 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      if (currentScrollY > lastScrollY && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+
       if (currentScrollY <= 0) {
         setIsVisible(true); // Always show at top
       } else if (currentScrollY > lastScrollY) {
@@ -31,7 +35,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, mobileMenuOpen]);
 
   return (
     <nav 
@@ -87,7 +91,7 @@ const Navbar = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="absolute top-[70px] left-0 w-full bg-[var(--background)] text-[var(--foreground)] shadow-md md:hidden flex flex-col items-center gap-4 py-4 transition-all">
+        <div className="absolute top-[100px] left-0 w-full bg-[var(--background)] text-[var(--foreground)] shadow-md md:hidden flex flex-col items-center gap-4 py-4 transition-all">
           <Link
             href="/blog"
             onClick={toggleMobileMenu}
