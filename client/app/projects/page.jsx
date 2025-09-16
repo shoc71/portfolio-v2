@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { techFilters } from "@/data/techFilters";
-import { projects } from "@/data/projects";
+import { projects } from "@/data/projectPosts";
 // import FloatingSquaresBackground from "./FloatingSquaresBackground";
 import ParticlesBackground from "../backgrounds/ParticlesBackground";
 import ParticlesCustomBackground from "../backgrounds/ParticlesCustomBackground";

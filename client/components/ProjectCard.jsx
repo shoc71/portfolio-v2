@@ -2,8 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { Github } from "lucide-react";
 import { toolIcons } from "@/data/toolIcons";
+import Link from "next/link";
 
 const ProjectCard = ({
+  slug,
   title,
   description,
   image,
@@ -25,9 +27,14 @@ const ProjectCard = ({
 
       <div className="flex-1 flex flex-col justify-between gap-4">
         <div>
-          <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+          <Link href={`/projects/${slug}`}>
+            <h3 className="text-2xl font-semibold mb-2 hover:underline cursor-pointer">
+              {title}
+            </h3>
+          </Link>
           <p className="text-sm opacity-80 mb-3">{description}</p>
 
+          {/* Tools */}
           <div className="flex gap-2 text-[var(--muted-foreground)] dark:text-white">
             {tools.map((tool, idx) => (
               <span
@@ -42,6 +49,7 @@ const ProjectCard = ({
           </div>
         </div>
 
+        {/* Links */}
         <div className="flex gap-4 mt-4">
           <a
             href={githubUrl}
