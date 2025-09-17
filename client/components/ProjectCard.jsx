@@ -32,7 +32,36 @@ const ProjectCard = ({
               {title}
             </h3>
           </Link>
-          <p className="text-sm opacity-80 mb-3">{description}</p>
+          <div className="text-sm sm:text-base lg:text-lg opacity-80 mb-3">
+            {Array.isArray(description) ? (
+              // Only show the first element of the array
+              typeof description[0] === "string" ? (
+                description[0]
+              ) : description[0]?.type === "image" ? (
+                <Image
+                  src={description[0].src}
+                  alt={description[0].alt || "Project description image"}
+                  width={400}
+                  height={300}
+                  className="rounded-lg"
+                />
+              ) : (
+                <span>{JSON.stringify(description[0])}</span>
+              )
+            ) : typeof description === "string" ? (
+              description
+            ) : description?.type === "image" ? (
+              <Image
+                src={description.src}
+                alt={description.alt || "Project description image"}
+                width={400}
+                height={300}
+                className="rounded-lg"
+              />
+            ) : (
+              <span>{JSON.stringify(description)}</span>
+            )}
+          </div>
 
           {/* Tools */}
           <div className="flex gap-2 text-[var(--muted-foreground)] dark:text-white">

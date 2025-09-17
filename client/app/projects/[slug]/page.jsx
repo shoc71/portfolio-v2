@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Github } from "lucide-react";
 import { toolIcons } from "@/data/toolIcons";
 
-export default function ProjectPage ({ params }) {
-
+export default function ProjectPage({ params }) {
   const { slug } = params;
   console.log("Slug param:", slug);
 
@@ -15,11 +14,6 @@ export default function ProjectPage ({ params }) {
     console.log("project.slug:", p.slug, "vs slug param:", slug);
     return p.slug === slug;
   });
-
-  console.log("All projects:", projects);
-  console.log("Current Project:", projects[0].slug);
-  console.log("Slug param:", slug);
-  // console.log("Slug page param:", slug);
 
   if (!project) {
     return <p className="text-center mt-10">Project not found.</p>;
@@ -31,18 +25,44 @@ export default function ProjectPage ({ params }) {
     <div className="max-w-5xl mx-auto p-6">
       {/* Project Image */}
       <div className="rounded-xl overflow-hidden shadow-lg mb-6">
-        <Image
-          src={image}
-          alt={title}
-          width={1200}
-          height={600}
-          className="w-full h-auto object-cover"
-        />
+        {image?.src && (
+          <Image
+            src={image.src}
+            alt={image.alt || title}
+            width={800}
+            height={400}
+            className="w-full h-auto object-cover"
+          />
+        )}
       </div>
 
-      {/* Project Title + Description */}
+      {/* Project Title */}
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
-      <p className="text-lg opacity-80 mb-6">{description}</p>
+
+      {/* Description - supports array or string */}
+      <div className="space-y-4 mb-6">
+        {Array.isArray(description) ? (
+          description.map((item, idx) =>
+            typeof item === "string" ? (
+              <p key={idx} className="text-lg opacity-80">
+                {item}
+              </p>
+            ) : item?.type === "image" ? (
+              <div key={idx} className="rounded-lg overflow-hidden shadow">
+                <Image
+                  src={item.src}
+                  alt={item.alt || "Project image"}
+                  width={1200}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            ) : null
+          )
+        ) : (
+          <p className="text-lg opacity-80">{description}</p>
+        )}
+      </div>
 
       {/* Tools */}
       <div className="flex gap-3 mb-6">
@@ -54,38 +74,40 @@ export default function ProjectPage ({ params }) {
       </div>
 
       {/* Links */}
-      <div className="flex gap-4">
-        {githubUrl && (
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 border border-[var(--border)] rounded hover:bg-[var(--muted)] transition"
-          >
-            <Github className="w-5 h-5" />
-            Source Code
-          </a>
-        )}
-        {liveUrl && (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-[var(--primary)] text-[var(--primary-foreground)] rounded hover:opacity-90 transition"
-          >
-            Live Demo
-          </a>
-        )}
-      </div>
+      <div className="flex justify-between items-center mt-10 mb-10">
+        {/* Left side buttons */}
+        <div className="flex gap-4">
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 border border-[var(--border)] rounded hover:bg-[var(--muted)] transition"
+            >
+              <Github className="w-5 h-5" />
+              Source Code
+            </a>
+          )}
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-[var(--primary)] text-[var(--primary-foreground)] rounded hover:opacity-90 transition"
+            >
+              Live Demo
+            </a>
+          )}
+        </div>
 
-      {/* Back link */}
-      <div className="mt-10">
-        <Link href="/projects" className="hover:underline text-[var(--primary)]">
+        {/* Right side button */}
+        <Link
+          href="/projects"
+          className="px-4 py-2 rounded bg-yellow-400 text-black font-medium hover:bg-yellow-500 transition"
+        >
           ← Back to Projects
         </Link>
       </div>
     </div>
   );
 }
-
-// export default ProjectPage;

@@ -4,8 +4,6 @@ import React, { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import { techFilters } from "@/data/techFilters";
 import { projects } from "@/data/projectPosts";
-// import FloatingSquaresBackground from "./FloatingSquaresBackground";
-import ParticlesBackground from "../backgrounds/ParticlesBackground";
 import ParticlesCustomBackground from "../backgrounds/ParticlesCustomBackground";
 
 const getRandomFive = (list) => {
@@ -103,9 +101,27 @@ const ProjectsPage = () => {
 
       {/* Project Cards */}
       <div className="grid gap-10 max-w-5xl mx-auto relative z-10">
-        {filteredProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
+        {filteredProjects.map((project, index) => {
+          // normalize image
+          let imageSrc = "";
+          let imageAlt = project.title;
+
+          if (typeof project.image === "string") {
+            imageSrc = project.image;
+          } else if (project.image && typeof project.image === "object") {
+            imageSrc = project.image.src || "";
+            imageAlt = project.image.alt || project.title;
+          }
+
+          return (
+            <ProjectCard
+              key={index}
+              {...project}
+              image={imageSrc}
+              alt={imageAlt}
+            />
+          );
+        })}
         {filteredProjects.length === 0 && (
           <p className="text-center text-gray-500">No projects found.</p>
         )}
