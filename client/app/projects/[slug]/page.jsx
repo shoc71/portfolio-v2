@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import { toolIcons } from "@/data/toolIcons";
+import ParticlesCharBackground from "@/app/backgrounds/ParticleBackgroundEmojis";
 
 export default function ProjectPage({ params }) {
   const { slug } = params;
@@ -19,10 +20,12 @@ export default function ProjectPage({ params }) {
     return <p className="text-center mt-10">Project not found.</p>;
   }
 
-  const { title, description, image, githubUrl, liveUrl, tools } = project;
+  const { title, description, image, githubUrl, liveUrl, tools, particles } = project;
 
   return (
     <div className="max-w-5xl mx-auto p-6">
+
+      {particles && <ParticlesCharBackground characters={particles} />}
 
       {/* Project Title */}
       <h1 className="text-4xl font-bold mb-4 text-start">{title}</h1>
@@ -56,25 +59,54 @@ export default function ProjectPage({ params }) {
       {/* Description - supports array or string */}
       <div className="space-y-4 mb-6">
         {Array.isArray(description) ? (
-          description.map((item, idx) =>
-            typeof item === "string" ? (
-              <p key={idx} className="text-lg opacity-80">
-                {item}
-              </p>
-            ) : item?.type === "image" ? (
-              <div key={idx} className="rounded-lg overflow-hidden shadow">
-                <Image
-                  src={item.src}
-                  alt={item.alt || "Project image"}
-                  width={1200}
-                  height={600}
-                  className={item.size || "w-full h-auto object-cover"}
-                />
+          description.reduce((blocks, item) => {
+            // If string, append to last block (if last block is text) or create new text block
+            if (typeof item === "string") {
+              if (
+                blocks.length > 0 &&
+                blocks[blocks.length - 1].type === "text"
+              ) {
+                blocks[blocks.length - 1].content.push(item);
+              } else {
+                blocks.push({ type: "text", content: [item] });
+              }
+            }
+            // If image, push as its own block
+            else if (item?.type === "image") {
+              blocks.push(item);
+            }
+            return blocks;
+          }, []).map((block, idx) =>
+            block.type === "text" ? (
+              <div
+                key={idx}
+                className="
+                rounded-lg p-4 space-y-2
+                bg-white/90 text-black
+                dark:bg-black/90 dark:text-white
+                "
+              >
+                {block.content.map((line, i) => (
+                  <p key={i} className="text-lg opacity-80">
+                    {line}
+                  </p>
+                ))}
               </div>
+            ) : block.type === "image" ? (
+              <Image
+                key={idx}
+                src={block.src}
+                alt={block.alt || "Project image"}
+                width={1200}
+                height={600}
+                className={block.size || "w-full h-auto object-cover"}
+              />
             ) : null
           )
         ) : (
-          <p className="text-lg opacity-80">{description}</p>
+          <p className="text-lg opacity-80 bg-black/40 text-white rounded-lg p-4">
+            {description}
+          </p>
         )}
       </div>
 
