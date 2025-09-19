@@ -23,7 +23,24 @@ export default function ProjectPage({ params }) {
 
   return (
     <div className="max-w-5xl mx-auto p-6">
-      {/* Project Image */}
+
+      {/* Project Title */}
+      <h1 className="text-4xl font-bold mb-4 text-start">{title}</h1>
+
+      {/* Tools */}
+      <div className="flex flex-wrap gap-4 mb-6 justify-center">
+        {tools?.map((tool, idx) => (
+          <div
+            key={idx}
+            className="flex items-center gap-2 px-3 py-1 rounded bg-[var(--muted)]"
+          >
+            <span className="text-2xl">{toolIcons[tool]}</span>
+            <span className="text-sm font-medium">{tool}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Project Image
       <div className="rounded-xl overflow-hidden shadow-lg mb-6">
         {image?.src && (
           <Image
@@ -31,13 +48,10 @@ export default function ProjectPage({ params }) {
             alt={image.alt || title}
             width={800}
             height={400}
-            className="w-full h-auto object-cover"
+            className="w-full sm:w-[500px] md:w-[800px] h-auto mx-auto"
           />
         )}
-      </div>
-
-      {/* Project Title */}
-      <h1 className="text-4xl font-bold mb-4">{title}</h1>
+      </div> */}
 
       {/* Description - supports array or string */}
       <div className="space-y-4 mb-6">
@@ -54,7 +68,7 @@ export default function ProjectPage({ params }) {
                   alt={item.alt || "Project image"}
                   width={1200}
                   height={600}
-                  className="w-full h-auto object-cover"
+                  className={item.size || "w-full h-auto object-cover"}
                 />
               </div>
             ) : null
@@ -62,15 +76,6 @@ export default function ProjectPage({ params }) {
         ) : (
           <p className="text-lg opacity-80">{description}</p>
         )}
-      </div>
-
-      {/* Tools */}
-      <div className="flex gap-3 mb-6">
-        {tools?.map((tool, idx) => (
-          <span key={idx} title={tool} className="text-2xl">
-            {toolIcons[tool]}
-          </span>
-        ))}
       </div>
 
       {/* Links */}
