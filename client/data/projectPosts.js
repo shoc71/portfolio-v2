@@ -34,15 +34,18 @@ export const projects = [
       "Novel Seeker - E-commerce bookstore MVP built for the client with admin privileges, tracking purchases, and managing products.",
       "This app helps readers discover new novels.",
       { type: "image", src: "/images/novel-seeker-preview.png", alt: "Novel Seeker Preview" },
-      "You can search by genre, author, or popularity."
+      "You can search by genre, author, or popularity.",
+      "The current model that's available to the public is the mock-up made for a client.",
+      "Sadly, they took it down after August but they allowed me to keep the mockup as proof I did the project."
     ],
     image: assets.novel_seeker,
-    githubUrl: "https://github.com/your/repo",
-    liveUrl: "https://novelseeker.com",
+    githubUrl: "https://github.com/shoc71/Novel-Seeker",
+    liveUrl: "https://novel-seeker-ef3f.onrender.com/",
     tools: ["mongodb", "express", "react", "nodejs", "stripe",
             "redis", "cloudinary", "jwt", "bcrypt", "tailwind",
             "html5", "css3", "javascript", "json", "api"
           ],
+    particles: ["🛍️", "📒", "🔖", "🧧", "🗒️"]
   },
 
   {
@@ -60,11 +63,12 @@ export const projects = [
       "You can search by genre, author, or popularity."
     ],
     image: assets.job_app_ext_top,
-    githubUrl: "https://github.com/your/repo",
+    githubUrl: "https://github.com/shoc71/Job-Tracker-Extension",
     liveUrl: "https://jobtracker.com",
     tools: ["html5", "css3", "javascript", "json", 
             "nodejs", "bootstrap", "extension"
           ],
+    particles: ["🏢", "👨‍💻", "💼", "🔧"]
   },
 
   {
@@ -78,11 +82,12 @@ export const projects = [
       { type: "image", src: "/images/novel-seeker-preview.png", alt: "Novel Seeker Preview" },
     ],
     image: assets.product_store,
-    githubUrl: "https://github.com/your/repo",
-    liveUrl: "https://productstore.com",
+    githubUrl: "https://github.com/shoc71/product-store",
+    liveUrl: "https://product-store-4h1p.onrender.com/",
     tools: ["mongodb", "express", "react", "nodejs", "chakraui",
             "html5", "css3", "javascript"
           ],
+    particles: ["🏪", "🛍️", "💰", "💵"]
   },
 
   {
@@ -111,5 +116,8 @@ export const projects = [
     tools: [ "nodejs", "bootstrap", "html5", "css3", 
              "javascript", "api"
             ],
+    particles: ["🌞", "🌤", "⛅", "🌥", "⛈️", "🌦️", "🌤️", "🌦", "🌧️", "🌡️", 
+                "🌩️", "🌨", "❄️", "🌬", "🌪", "🌫", "🌬️", "🌈", "☁️", "🌡", 
+                "☔️", "🌅", "🌇", "❄️"]
   },
 ];
