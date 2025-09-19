@@ -26,19 +26,63 @@ const ProjectsPage = () => {
 
   const visibleTechFilters = showAllFilters ? techFilters : randomTech;
 
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesTool = selectedTool
-        ? project.tools.includes(selectedTool)
-        : true;
-      const matchesSearch =
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.tools.some((tool) =>
-          tool.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+  // add this helper above the useMemo
+  const extractTextFromDescription = (description) => {
+    if (!description) return [];
 
-      return matchesTool && matchesSearch;
+    // single string
+    if (typeof description === "string") return [description];
+
+    // array: pick only string-like pieces or text-like props from objects
+    if (Array.isArray(description)) {
+      return description.flatMap((item) => {
+        if (typeof item === "string") return [item];
+        if (item && typeof item === "object") {
+          // prefer explicit text, then alt (for images), otherwise skip
+          if (typeof item.text === "string") return [item.text];
+          if (typeof item.alt === "string") return [item.alt];
+        }
+        return [];
+      });
+    }
+
+    // object: try text or alt fields
+    if (typeof description === "object") {
+      if (typeof description.text === "string") return [description.text];
+      if (typeof description.alt === "string") return [description.alt];
+    }
+
+    return [];
+  };
+
+  const filteredProjects = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+
+    return projects.filter((project) => {
+      // safe tools array
+      const toolsArr = Array.isArray(project.tools) ? project.tools : [];
+
+      // selected tool match (normalize to lowercase)
+      const matchesTool = selectedTool
+        ? toolsArr.map((t) => String(t).toLowerCase()).includes(String(selectedTool).toLowerCase())
+        : true;
+
+      // title match
+      const titleMatch = project.title && String(project.title).toLowerCase().includes(q);
+
+      // description match: extract text parts then search them
+      const descStrings = extractTextFromDescription(project.description);
+      const descMatch = descStrings.some((s) => String(s).toLowerCase().includes(q));
+
+      // tools match (search query)
+      const toolsMatch = toolsArr.some((tool) =>
+        String(tool).toLowerCase().includes(q)
+      );
+
+      // if q is empty, treat as match (so filters only by selectedTool)
+      const searchMatches = q ? (titleMatch || descMatch || toolsMatch) : true;
+
+      return matchesTool && searchMatches;
     });
   }, [selectedTool, searchQuery]);
 

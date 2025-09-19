@@ -1,6 +1,32 @@
 import { assets } from "@/assets/assets";
 
 export const projects = [
+  // {
+  //   slug: "test",
+  //   title: "Test Card",
+  //   description: [
+  //     "Novel Seeker - E-commerce bookstore MVP built for the client with admin privileges, tracking purchases, and managing products.",
+  //     "This app helps readers discover new novels.",
+  //     { type: "image", src: "/images/novel-seeker-preview.png", alt: "Novel Seeker Preview" },
+  //     "You can search by genre, author, or popularity."
+  //   ],
+  //   image: assets.test_img,
+  //   githubUrl: "https://github.com/your/repo",
+  //   liveUrl: "https://novelseeker.com",
+  //   tools: ["dotnet", "angular", "maven", "api", "appwrite", "aws", "axios",
+  //           // "babel", "bcrypt", "bootstrap", "c", "csharp", "cplusplus", "chakraui", "cicd",
+  //           // "cloud", "cloudinary", "css3", "docker", "express", "extension", "git",
+  //           // "github", "html5", "java", "javascript", "jira", "json", "jwt", "kubernetes",
+  //           // "mongodb", "mssqlserver", "next", "node", "postgresql", "postman", "python",
+  //           // "react", "redis", "shadcn", "springboot", "sql", "stripe", "tailwind",
+  //           // "firebase", "terraform", "prometheus", "svelte", "junit", "vercel",
+  //           // "render", "heroku", "jest", "playwright", "gradle", "graphql",
+  //           // "typescript", "linux", "kafka", "oracle",
+  //           // "golang", "elixir", "azure", "bitbucket", "jenkins",
+  //           // "databricks", "rust", "ruby", "dynamodb", "pulumi",
+  //         ],
+  // },
+
   {
     slug: "novel-seeker",
     title: "Novel Seeker",
@@ -15,22 +41,32 @@ export const projects = [
     liveUrl: "https://novelseeker.com",
     tools: ["mongodb", "express", "react", "nodejs", "stripe",
             "redis", "cloudinary", "jwt", "bcrypt", "tailwind",
-            "html5", "css3", "javascript", "json"],
+            "html5", "css3", "javascript", "json", "api"
+          ],
   },
+
   {
     slug: "job-tracker-extension",
     title: "Job Tracker Extension",
     description: [
       "Know where you applied and log all the information in one spot",
       "This app helps readers discover new novels.",
-      { type: "image", src: "/images/novel-seeker-preview.png", alt: "Novel Seeker Preview" },
+      { 
+        type: "image", 
+        src: assets.job_ext_app_main_page,
+        alt: "Novel Seeker Preview",
+        size: "w-full sm:w-[400px] md:w-[600px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1300px] h-auto mx-auto"
+      },
       "You can search by genre, author, or popularity."
     ],
-    image: assets.product_store,
+    image: assets.job_app_ext_top,
     githubUrl: "https://github.com/your/repo",
     liveUrl: "https://jobtracker.com",
-    tools: ["html5", "css3", "javascript", "json", "nodejs", "bootstrap", "extension"],
+    tools: ["html5", "css3", "javascript", "json", 
+            "nodejs", "bootstrap", "extension"
+          ],
   },
+
   {
     slug: "product-store",
     title: "Product Store",
@@ -45,6 +81,35 @@ export const projects = [
     githubUrl: "https://github.com/your/repo",
     liveUrl: "https://productstore.com",
     tools: ["mongodb", "express", "react", "nodejs", "chakraui",
-            "html5", "css3", "javascript"],
+            "html5", "css3", "javascript"
+          ],
+  },
+
+  {
+    slug: "weather-dashboard",
+    title: "Weather Dashboard",
+    description: [
+      "This is a Weather-Dashboard app that will show you that weather for today and the next 5 days.",
+      "Entering a City location is all you need.",
+      { 
+        type: "image", 
+        src: assets.weather_dashboard_0, 
+        alt: "Novel Seeker Preview",
+        size: "w-full h-auto sm:w-[300px] md:w-[400px] lg:w-[700px] xl:w-[900px] aspect-[16/9] mx-auto"
+      },
+      "It uses the weather API callback function making a backend call to display all the required information on to the frontend as pleased.",
+      { 
+        type: "image", 
+        src: assets.weather_dashboard_1, 
+        alt: "Novel Seeker Preview",
+        size: "w-full h-auto sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[1100px] mx-auto"
+      },
+    ],
+    image: assets.weather_dashboard_0,
+    githubUrl: "https://github.com/shoc71/Weather-Dashboard",
+    liveUrl: "https://weather-dashboard-ymxb.onrender.com/",
+    tools: [ "nodejs", "bootstrap", "html5", "css3", 
+             "javascript", "api"
+            ],
   },
 ];
