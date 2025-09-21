@@ -39,7 +39,7 @@ import {
     SiPulumi,
 } from "react-icons/si";
 import { FaAws, FaDatabase, FaCode, FaJava, FaWindows, FaCube, FaLock, FaAngular, FaPuzzlePiece } from "react-icons/fa";
-import { DiMsqlServer, DiRuby } from "react-icons/di";
+import { DiMsqlServer, DiRuby, DiMysql } from "react-icons/di";
 import { LiaTheaterMasksSolid } from "react-icons/lia";
 import { BsCloud, BsFiletypeJs } from "react-icons/bs";
 import { RiFirebaseFill, RiVercelFill } from "react-icons/ri";
@@ -97,6 +97,7 @@ export const toolIcons = {
     maven: <SiApachemaven className="w-5 h-5 text-orange-600" />,
     mongodb: <SiMongodb className="w-5 h-5 text-green-600" />,
     mssqlserver: <DiMsqlServer className="w-5 h-5 text-[#CC2927]" />,
+    mysql: <DiMysql className="w-5 h-5 text-blue-500" />,
     next: <SiNextdotjs className="w-5 h-5 text-black dark:text-white" />,
     // mvc: <SiDotnet className="w-5 h-5 text-purple-800" />,
     node: <BsFiletypeJs className="w-5 h-5 text-yellow-500" />,
