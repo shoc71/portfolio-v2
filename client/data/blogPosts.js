@@ -90,7 +90,7 @@ hello("Blog!");`,
   {
     slug: "8-design-pattern",
     title: "Eight Design Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-05-23",
     edited: "2025-09-02",
     particles: ["👋", "🌐", "🌊", "🌎", "🙋‍♀️", "🌍", "🙋"],
@@ -116,7 +116,7 @@ print(saying_hello())`,
   {
     slug: "sliding-window-pattern",
     title: "Sliding Window Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔍", "📊", "⏱", "🌐"],
@@ -159,7 +159,7 @@ print(max_sum_subarray(nums, k))  # Output: 9
   {
     slug: "two-pointers-pattern",
     title: "Two Pointers Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🧑‍🤝‍🧑", "🔍", "🚶", "⛓"],
@@ -204,7 +204,7 @@ print(has_pair_with_sum(nums, target))  # Output: True
   {
     slug: "fast-slow-pointers",
     title: "Fast and Slow Pointers (Tortoise and Hare) Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🐢", "🐇", "⚡️", "🔄"],
@@ -257,7 +257,7 @@ print(has_cycle(head))  # Output: True
   {
     slug: "merge-intervals",
     title: "Merge Intervals Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["📅", "🕰", "🔁", "📈"],
@@ -304,7 +304,7 @@ print(merge(intervals))  # Output: [[1, 4], [6, 9]]
   {
     slug: "binary-search",
     title: "Binary Search Algorithm in Python",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔍", "📚", "🏃‍♂️", "🧠"],
@@ -348,7 +348,7 @@ print(binary_search(nums, target))  # Output: 3
   {
     slug: "backtracking-pattern",
     title: "Backtracking Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔄", "🚶", "🧩", "🧠"],
@@ -403,7 +403,7 @@ for solution in solutions:
   {
     slug: "dynamic-programming-pattern",
     title: "Dynamic Programming (DP) in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["📉", "🧠", "⏳", "📚"],
@@ -439,7 +439,7 @@ print(fib(n))  # Output: 55
   {
     slug: "greedy-algorithm-pattern",
     title: "Greedy Algorithm Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["💰", "💡", "📊", "⏳"],
@@ -480,7 +480,7 @@ print(fractional_knapsack(items, capacity))  # Output: 240.0
   {
     slug: "topological-sort-pattern",
     title: "Topological Sort Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔗", "🔀", "📅", "🎯"],
@@ -534,7 +534,7 @@ print(can_finish(num_courses, prerequisites))  # Output: True
   {
     slug: "union-find-pattern",
     title: "Union-Find (Disjoint Set Union) Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🌐", "🔀", "💥", "🔄"],
@@ -591,7 +591,7 @@ print(uf.find(0) == uf.find(3))  # Output: False
   {
     slug: "heap-pattern",
     title: "Heap Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔼", "🔽", "⏳", "💻"],
@@ -626,7 +626,7 @@ print(k_largest_elements(nums, k))  # Output: [6, 5]
   {
     slug: "trie-pattern",
     title: "Trie Data Structure and Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["📚", "🔠", "🔍", "🌳"],
@@ -682,7 +682,7 @@ print(trie.search("app"))    # Output: False
   {
     slug: "breadth-first-search-pattern",
     title: "Breadth-First Search (BFS) Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🌐", "🚶‍♂️", "🔄", "🔍"],
@@ -738,7 +738,7 @@ print(bfs_shortest_path(graph, start, target))  # Output: ['A', 'C', 'F']
   {
     slug: "depth-first-search-pattern",
     title: "Depth-First Search (DFS) Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🌲", "🔍", "🔄", "⛰️"],
@@ -783,7 +783,7 @@ print(dfs(graph, 'A'))  # Output: {'A', 'B', 'C', 'D', 'E', 'F'}
   {
     slug: "top-k-elements-pattern",
     title: "Top K Elements Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔢", "📊", "🔥", "💥"],
@@ -818,7 +818,7 @@ print(top_k_elements(nums, k))  # Output: [12, 11, 5]
   {
     slug: "binary-search-pattern",
     title: "Binary Search Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔍", "💡", "📊", "📈"],
@@ -863,7 +863,7 @@ print(binary_search(arr, target))  # Output: 3
   {
     slug: "merge-sort-pattern",
     title: "Merge Sort Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🔀", "⚡", "📉", "🔨"],
@@ -919,7 +919,7 @@ print(merge_sort(arr))  # Output: [3, 9, 10, 27, 38, 43, 82]
   {
     slug: "quick-sort-pattern",
     title: "Quick Sort Pattern in Algorithms",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["⚡", "🔨", "💥", "🔀"],
@@ -958,7 +958,7 @@ print(quick_sort(arr))  # Output: [3, 9, 10, 27, 38, 43, 82]
   {
     slug: "dijkstra-pattern",
     title: "Dijkstra's Algorithm Pattern",
-    author: "Admin",
+    author: "shoc71",
     date: "2025-09-20",
     edited: "2025-09-20",
     particles: ["🛣️", "💡", "⏳", "📍"],

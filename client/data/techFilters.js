@@ -45,7 +45,7 @@ import {
 } from "react-icons/si";
 import { FaJava, FaAws, FaDatabase, FaCode, FaWindows, 
         FaCube, FaLock, FaAngular, FaPuzzlePiece, FaLinux } from "react-icons/fa";
-import { DiMsqlServer, DiRuby } from "react-icons/di";
+import { DiMsqlServer, DiRuby, DiMysql } from "react-icons/di";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { LiaTheaterMasksSolid } from "react-icons/lia";
 import { RiFirebaseFill, RiVercelFill } from "react-icons/ri";
@@ -178,7 +178,7 @@ export const techFilters = [
     },
     {
         id: "dynamodb",
-        name: "dynamoDB",
+        name: "DynamoDB",
         icon: <SiAmazondynamodb className="w-5 h-5 text-blue-600" />,
     },
     {
@@ -249,7 +249,7 @@ export const techFilters = [
     {
         id: "jenkins",
         name: "Jenkins",
-        icon: <SiJenkins className="w-5 h-5 text-pink-500" />,
+        icon: <SiJenkins className="w-5 h-5 text-red-400" />,
     },
     {
         id: "jest",
@@ -300,6 +300,11 @@ export const techFilters = [
         id: "mssqlserver",
         name: "MS SQL Server",
         icon: <DiMsqlServer className="w-5 h-5 text-[#CC2927]" />,
+    },
+    {
+        id: "mysql",
+        name: "MySQL",
+        icon: <DiMysql className="w-5 h-5 text-blue-500" />,
     },
     { 
         id: "next", 
