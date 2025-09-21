@@ -11,6 +11,7 @@ import job_ext_app_main_page from './job_ext_app_2.jpg';
 import weather_dashboard_0 from './weather_dashboard_0.png';
 import weather_dashboard_1 from './weather_dashboard_1.png';
 import test_img from "./test.jpg";
+import portfolio_pic_0 from "./portfolio.png";
 // import storyModule from './'
 // import success_sfx from './success.mp3';
 
@@ -24,6 +25,7 @@ export const assets = {
     novel_seeker,
     profile_contact,
     profile_pic,
+    portfolio_pic_0,
     product_store,
     test_img,
     weather_dashboard_0,

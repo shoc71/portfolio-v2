@@ -15,8 +15,8 @@ export const projects = [
   //   liveUrl: "https://novelseeker.com",
   //   tools: ["dotnet", "angular", "maven", "api", "appwrite", "aws", "axios",
   //           // "babel", "bcrypt", "bootstrap", "c", "csharp", "cplusplus", "chakraui", "cicd",
-  //           // "cloud", "cloudinary", "css3", "docker", "express", "extension", "git",
-  //           // "github", "html5", "java", "javascript", "jira", "json", "jwt", "kubernetes",
+  //           // "cloud", "cloudinary", "css", "docker", "express", "extension", "git",
+  //           // "github", "html", "java", "javascript", "jira", "json", "jwt", "kubernetes",
   //           // "mongodb", "mssqlserver", "next", "node", "postgresql", "postman", "python",
   //           // "react", "redis", "shadcn", "springboot", "sql", "stripe", "tailwind",
   //           // "firebase", "terraform", "prometheus", "svelte", "junit", "vercel",
@@ -26,6 +26,36 @@ export const projects = [
   //           // "databricks", "rust", "ruby", "dynamodb", "pulumi",
   //         ],
   // },
+
+  {
+    slug: "portfolio-v2",
+    title: "Personal Website",
+    description: [
+      "Personal Website made to present personal projects and contributions.",
+      "This app helps readers discover new novels.",
+      { 
+        type: "image", 
+        src: assets.portfolio_pic_0, 
+        alt: "Novel Seeker Preview",
+        size: "w-full sm:w-[400px] md:w-[600px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1300px] h-auto mx-auto"
+      },
+      "You can search by genre, author, or popularity.",
+      "The current model that's available to the public is the mock-up made for a client.",
+      "Sadly, they took it down after August but they allowed me to keep the mockup as proof I did the project."
+    ],
+    image: assets.portfolio_pic_0,
+    githubUrl: "https://github.com/shoc71/portfolio-v2",
+    liveUrl: "https://sonu-singh.vercel.app/",
+    tools: [
+            "next", "shadcn", "tailwind", "vercel", "api", "react",
+            "html", "css", "javascript"
+          ],
+    particles: [
+                "🎁", "📒", "🔖", "⚪", "🗒️", 
+                "🖊️", "🖋️", "⚽", "💗", "🌳",
+                "🍇", 
+              ]
+  },
 
   {
     slug: "novel-seeker",
@@ -43,7 +73,7 @@ export const projects = [
     liveUrl: "https://novel-seeker-ef3f.onrender.com/",
     tools: ["mongodb", "express", "react", "nodejs", "stripe",
             "redis", "cloudinary", "jwt", "bcrypt", "tailwind",
-            "html5", "css3", "javascript", "json", "api"
+            "html", "css", "javascript", "json", "api"
           ],
     particles: ["🛍️", "📒", "🔖", "🧧", "🗒️"]
   },
@@ -65,7 +95,7 @@ export const projects = [
     image: assets.job_app_ext_top,
     githubUrl: "https://github.com/shoc71/Job-Tracker-Extension",
     liveUrl: "https://jobtracker.com",
-    tools: ["html5", "css3", "javascript", "json", 
+    tools: ["html", "css", "javascript", "json", 
             "nodejs", "bootstrap", "extension"
           ],
     particles: ["🏢", "👨‍💻", "💼", "🔧"]
@@ -85,7 +115,7 @@ export const projects = [
     githubUrl: "https://github.com/shoc71/product-store",
     liveUrl: "https://product-store-4h1p.onrender.com/",
     tools: ["mongodb", "express", "react", "nodejs", "chakraui",
-            "html5", "css3", "javascript"
+            "html", "css", "javascript"
           ],
     particles: ["🏪", "🛍️", "💰", "💵"]
   },
@@ -113,7 +143,7 @@ export const projects = [
     image: assets.weather_dashboard_0,
     githubUrl: "https://github.com/shoc71/Weather-Dashboard",
     liveUrl: "https://weather-dashboard-ymxb.onrender.com/",
-    tools: [ "nodejs", "bootstrap", "html5", "css3", 
+    tools: [ "nodejs", "bootstrap", "html", "css", 
              "javascript", "api"
             ],
     particles: ["🌞", "🌤", "⛅", "🌥", "⛈️", "🌦️", "🌤️", "🌦", "🌧️", "🌡️", 

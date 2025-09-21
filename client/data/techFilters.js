@@ -1,6 +1,6 @@
 import {
     SiNextdotjs, SiHtml5, SiPrometheus, SiTailwindcss, SiNodedotjs,
-    SiCss3,
+    SiCss3, SiShadcnui, SiChakraui,
     SiJavascript,
     SiGradle,
     SiPostgresql,
@@ -108,7 +108,7 @@ export const techFilters = [
     // },
     {
         id: "bcryptjs",
-        name: "bcryptjs",
+        name: "Bcrypt.js",
         icon: <FaLock className="w-5 h-5 text-gray-700 dark:text-white" />,
     },
     {
@@ -144,7 +144,7 @@ export const techFilters = [
     { 
         id: "chakraui", 
         name: "Chakra UI",
-        icon: <FaCube className="w-5 h-5 text-teal-500" /> 
+        icon: <SiChakraui className="w-5 h-5 text-teal-500" /> 
     },
     {
         id: "cloud",
@@ -162,7 +162,7 @@ export const techFilters = [
     //     icon: <FaCode className="w-5 h-5 text-gray-700 dark:text-white" />,
     // },
     { 
-        id: "css3", 
+        id: "css", 
         name: "CSS3", 
         icon: <SiCss3 className="w-5 h-5 text-blue-600" /> 
     },
@@ -232,7 +232,7 @@ export const techFilters = [
         icon: <SiHeroku className="w-5 h-5 text-purple-500" />,
     },
     { 
-        id: "html5", 
+        id: "html", 
         name: "HTML5", 
         icon: <SiHtml5 className="w-5 h-5 text-orange-500" /> 
     },
@@ -312,7 +312,7 @@ export const techFilters = [
         icon: <SiNextdotjs className="w-5 h-5 text-black dark:text-white" /> 
     },
     {
-        id: "node",
+        id: "nodejs",
         name: "Node.js",
         icon: <BsFiletypeJs className="w-5 h-5 text-yellow-500" />,
     },
@@ -379,7 +379,7 @@ export const techFilters = [
     { 
         id: "shadcn", 
         name: "ShadCN UI", 
-        icon: <FaCube className="w-5 h-5 text-purple-600" /> 
+        icon: <SiShadcnui className="w-5 h-5 text-black dark:text-white" /> 
     },
     {
         id: "springboot",
