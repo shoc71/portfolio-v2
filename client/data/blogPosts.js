@@ -1007,4 +1007,58 @@ print(dijkstra(graph, start))  # Output: {'A': 0, 'B': 1, 'C': 3, 'D': 4}
     ],
   },
 
+  {
+    slug: "intelligence-in-fiction",
+    title: "Specific Ways to Accurately Represent Intelligence",
+    author: "shoc71",
+    date: "2025-10-21",
+    edited: "2025-10-21",
+    particles: ["👋", "🌐", "🌊", "🌎", "🙋‍♀️", "🌍", "🙋"],
+    content: [
+      { 
+        type: "text", 
+        value: "1. Pushing Boundaries" 
+      },
+      { type: "break" },
+      { 
+        type: "text", 
+        value: "The character(s) like the audience first learn of the rules of the games and then actively test and see what they can get away with and what rules are enforced rigorously and what can they get away with. In fact, they exist from preventing the character from doing whatever they want right from the get go." 
+      },
+      { type: "break" },
+      { 
+        type: "2. Callbacks", 
+        value: "This is where all the testing from earlier comes into play. We (the audience) needs to see how " 
+      },
+      { type: "break" },
+      { 
+        type: "text", 
+        value: "3. Blocks" 
+      },
+      { type: "break" },
+      { 
+        type: "text", 
+        value: "Hello" 
+      },
+      { type: "break" },
+      { 
+        type: "text", 
+        value: "4. Control" 
+      },
+      { type: "break" },
+      { 
+        type: "text", 
+        value: "they are the smartest one, there can never be more than one, one that stands above the rest. hence, the point of traps and deception. All out war about information." 
+      },
+      { 
+        type: "text", 
+        value: "5. Prep Time" 
+      },
+      { type: "break" },
+      { 
+        type: "text", 
+        value: "Three things are needed here; 1. Improvization because nothing were goes perfectly, 2. The weaknesses need to be deeply exploited and abused as a crux of the strategy, 3. Prior knowledge needs to be established otherwise the overturn isn't earned." 
+      },
+    ],
+  },
+
 ];
